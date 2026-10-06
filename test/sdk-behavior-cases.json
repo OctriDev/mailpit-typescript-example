@@ -1,0 +1,969 @@
+{
+  "baseUrl": "https://behavior.test",
+  "operationCount": 25,
+  "credentials": {
+    "bearer": "behavior-bearer-token",
+    "apiKey": "behavior-api-key",
+    "basicUser": "behavior-user",
+    "basicPassword": "behavior-password",
+    "basicHeader": "Basic YmVoYXZpb3ItdXNlcjpiZWhhdmlvci1wYXNzd29yZA=="
+  },
+  "authHeaders": {},
+  "cases": [
+    {
+      "id": "behavior-1",
+      "operationId": "getChaos",
+      "kinds": ["error-response", "json-response"],
+      "request": {
+        "method": "GET",
+        "pathTemplate": "/api/v1/chaos",
+        "pathParameters": {},
+        "query": [],
+        "headers": {},
+        "bodyKind": null,
+        "contentType": null,
+        "security": []
+      },
+      "expect": {
+        "method": "GET",
+        "path": "/api/v1/chaos",
+        "query": "",
+        "url": "https://behavior.test/api/v1/chaos",
+        "headers": {},
+        "bodyText": null,
+        "multipartFields": null
+      },
+      "response": {
+        "kind": "json",
+        "status": 200,
+        "mediaType": "application/json",
+        "body": "{\"Authentication\":{\"ErrorCode\":451,\"Probability\":5},\"Recipient\":{\"ErrorCode\":451,\"Probability\":5},\"Sender\":{\"ErrorCode\":451,\"Probability\":5}}",
+        "value": {
+          "Authentication": {
+            "ErrorCode": 451,
+            "Probability": 5
+          },
+          "Recipient": {
+            "ErrorCode": 451,
+            "Probability": 5
+          },
+          "Sender": {
+            "ErrorCode": 451,
+            "Probability": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "behavior-2",
+      "operationId": "setChaosParams",
+      "kinds": ["error-response", "json-request", "json-response"],
+      "request": {
+        "method": "PUT",
+        "pathTemplate": "/api/v1/chaos",
+        "pathParameters": {},
+        "query": [],
+        "headers": {},
+        "body": {
+          "Authentication": {
+            "ErrorCode": 451,
+            "Probability": 5
+          },
+          "Recipient": {
+            "ErrorCode": 451,
+            "Probability": 5
+          },
+          "Sender": {
+            "ErrorCode": 451,
+            "Probability": 5
+          }
+        },
+        "bodyKind": "json",
+        "contentType": "application/json",
+        "security": []
+      },
+      "expect": {
+        "method": "PUT",
+        "path": "/api/v1/chaos",
+        "query": "",
+        "url": "https://behavior.test/api/v1/chaos",
+        "headers": {
+          "content-type": "application/json"
+        },
+        "bodyText": "{\"Authentication\":{\"ErrorCode\":451,\"Probability\":5},\"Recipient\":{\"ErrorCode\":451,\"Probability\":5},\"Sender\":{\"ErrorCode\":451,\"Probability\":5}}",
+        "multipartFields": null
+      },
+      "response": {
+        "kind": "json",
+        "status": 200,
+        "mediaType": "application/json",
+        "body": "{\"Authentication\":{\"ErrorCode\":451,\"Probability\":5},\"Recipient\":{\"ErrorCode\":451,\"Probability\":5},\"Sender\":{\"ErrorCode\":451,\"Probability\":5}}",
+        "value": {
+          "Authentication": {
+            "ErrorCode": 451,
+            "Probability": 5
+          },
+          "Recipient": {
+            "ErrorCode": 451,
+            "Probability": 5
+          },
+          "Sender": {
+            "ErrorCode": 451,
+            "Probability": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "behavior-3",
+      "operationId": "GetMessageParams",
+      "kinds": ["error-response", "json-response", "path-serialization"],
+      "request": {
+        "method": "GET",
+        "pathTemplate": "/api/v1/message/{ID}",
+        "pathParameters": {
+          "ID": "id-1"
+        },
+        "query": [],
+        "headers": {},
+        "bodyKind": null,
+        "contentType": null,
+        "security": []
+      },
+      "expect": {
+        "method": "GET",
+        "path": "/api/v1/message/id-1",
+        "query": "",
+        "url": "https://behavior.test/api/v1/message/id-1",
+        "headers": {},
+        "bodyText": null,
+        "multipartFields": null
+      },
+      "response": {
+        "kind": "json",
+        "status": 200,
+        "mediaType": "application/json",
+        "body": "{\"Attachments\":[{\"Checksums\":{\"MD5\":\"MD5\",\"SHA1\":\"SHA1\",\"SHA256\":\"SHA256\"},\"ContentID\":\"Content-1\",\"ContentType\":\"ContentType\",\"FileName\":\"Example Name\",\"PartID\":\"Part-1\",\"Size\":1}],\"Bcc\":[{\"Address\":\"Address\",\"Name\":\"Example Name\"}],\"Cc\":[{\"Address\":\"Address\",\"Name\":\"Example Name\"}],\"Date\":\"2024-01-01T00:00:00Z\",\"From\":{\"Address\":\"Address\",\"Name\":\"Example Name\"},\"HTML\":\"HTML\",\"ID\":\"id-1\",\"Inline\":[{\"Checksums\":{\"MD5\":\"MD5\",\"SHA1\":\"SHA1\",\"SHA256\":\"SHA256\"},\"ContentID\":\"Content-1\",\"ContentType\":\"ContentType\",\"FileName\":\"Example Name\",\"PartID\":\"Part-1\",\"Size\":1}],\"ListUnsubscribe\":{\"Errors\":\"Errors\",\"Header\":\"Header\",\"HeaderPost\":\"HeaderPost\",\"Links\":[\"https://example.com\"]},\"MessageID\":\"Message-1\",\"ReplyTo\":[{\"Address\":\"Address\",\"Name\":\"Example Name\"}],\"ReturnPath\":\"ReturnPath\",\"Size\":1,\"Subject\":\"Subject\",\"Tags\":[\"Tags\"],\"Text\":\"Text\",\"To\":[{\"Address\":\"Address\",\"Name\":\"Example Name\"}],\"Username\":\"Example Name\"}",
+        "value": {
+          "Attachments": [
+            {
+              "Checksums": {
+                "MD5": "MD5",
+                "SHA1": "SHA1",
+                "SHA256": "SHA256"
+              },
+              "ContentID": "Content-1",
+              "ContentType": "ContentType",
+              "FileName": "Example Name",
+              "PartID": "Part-1",
+              "Size": 1
+            }
+          ],
+          "Bcc": [
+            {
+              "Address": "Address",
+              "Name": "Example Name"
+            }
+          ],
+          "Cc": [
+            {
+              "Address": "Address",
+              "Name": "Example Name"
+            }
+          ],
+          "Date": "2024-01-01T00:00:00Z",
+          "From": {
+            "Address": "Address",
+            "Name": "Example Name"
+          },
+          "HTML": "HTML",
+          "ID": "id-1",
+          "Inline": [
+            {
+              "Checksums": {
+                "MD5": "MD5",
+                "SHA1": "SHA1",
+                "SHA256": "SHA256"
+              },
+              "ContentID": "Content-1",
+              "ContentType": "ContentType",
+              "FileName": "Example Name",
+              "PartID": "Part-1",
+              "Size": 1
+            }
+          ],
+          "ListUnsubscribe": {
+            "Errors": "Errors",
+            "Header": "Header",
+            "HeaderPost": "HeaderPost",
+            "Links": ["https://example.com"]
+          },
+          "MessageID": "Message-1",
+          "ReplyTo": [
+            {
+              "Address": "Address",
+              "Name": "Example Name"
+            }
+          ],
+          "ReturnPath": "ReturnPath",
+          "Size": 1,
+          "Subject": "Subject",
+          "Tags": ["Tags"],
+          "Text": "Text",
+          "To": [
+            {
+              "Address": "Address",
+              "Name": "Example Name"
+            }
+          ],
+          "Username": "Example Name"
+        }
+      }
+    },
+    {
+      "id": "behavior-4",
+      "operationId": "LinkCheckParams",
+      "kinds": ["error-response", "json-response", "path-serialization", "query-serialization"],
+      "request": {
+        "method": "GET",
+        "pathTemplate": "/api/v1/message/{ID}/link-check",
+        "pathParameters": {
+          "ID": "id-1"
+        },
+        "query": [
+          {
+            "name": "follow",
+            "style": "form",
+            "explode": true,
+            "value": "false",
+            "serialized": "false"
+          }
+        ],
+        "headers": {},
+        "bodyKind": null,
+        "contentType": null,
+        "security": []
+      },
+      "expect": {
+        "method": "GET",
+        "path": "/api/v1/message/id-1/link-check",
+        "query": "follow=false",
+        "url": "https://behavior.test/api/v1/message/id-1/link-check?follow=false",
+        "headers": {},
+        "bodyText": null,
+        "multipartFields": null
+      },
+      "response": {
+        "kind": "json",
+        "status": 200,
+        "mediaType": "application/json",
+        "body": "{\"Errors\":1,\"Links\":[{\"Status\":\"active\",\"StatusCode\":200,\"URL\":\"https://example.com\"}]}",
+        "value": {
+          "Errors": 1,
+          "Links": [
+            {
+              "Status": "active",
+              "StatusCode": 200,
+              "URL": "https://example.com"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "behavior-5",
+      "operationId": "AttachmentParams",
+      "kinds": ["binary-response", "error-response", "path-serialization"],
+      "request": {
+        "method": "GET",
+        "pathTemplate": "/api/v1/message/{ID}/part/{PartID}",
+        "pathParameters": {
+          "ID": "id-1",
+          "PartID": "Part-1"
+        },
+        "query": [],
+        "headers": {},
+        "bodyKind": null,
+        "contentType": null,
+        "security": []
+      },
+      "expect": {
+        "method": "GET",
+        "path": "/api/v1/message/id-1/part/Part-1",
+        "query": "",
+        "url": "https://behavior.test/api/v1/message/id-1/part/Part-1",
+        "headers": {},
+        "bodyText": null,
+        "multipartFields": null
+      },
+      "response": {
+        "kind": "bytes",
+        "status": 200,
+        "mediaType": "application/*",
+        "body": "ZXhhbXBsZQ==",
+        "value": 12
+      }
+    },
+    {
+      "id": "behavior-6",
+      "operationId": "ThumbnailParams",
+      "kinds": ["binary-response", "error-response", "path-serialization"],
+      "request": {
+        "method": "GET",
+        "pathTemplate": "/api/v1/message/{ID}/part/{PartID}/thumb",
+        "pathParameters": {
+          "ID": "id-1",
+          "PartID": "Part-1"
+        },
+        "query": [],
+        "headers": {},
+        "bodyKind": null,
+        "contentType": null,
+        "security": []
+      },
+      "expect": {
+        "method": "GET",
+        "path": "/api/v1/message/id-1/part/Part-1/thumb",
+        "query": "",
+        "url": "https://behavior.test/api/v1/message/id-1/part/Part-1/thumb",
+        "headers": {},
+        "bodyText": null,
+        "multipartFields": null
+      },
+      "response": {
+        "kind": "bytes",
+        "status": 200,
+        "mediaType": "image/jpeg",
+        "body": "ZXhhbXBsZQ==",
+        "value": 12
+      }
+    },
+    {
+      "id": "behavior-7",
+      "operationId": "DownloadRawParams",
+      "kinds": ["error-response", "path-serialization", "text-response"],
+      "request": {
+        "method": "GET",
+        "pathTemplate": "/api/v1/message/{ID}/raw",
+        "pathParameters": {
+          "ID": "id-1"
+        },
+        "query": [],
+        "headers": {},
+        "bodyKind": null,
+        "contentType": null,
+        "security": []
+      },
+      "expect": {
+        "method": "GET",
+        "path": "/api/v1/message/id-1/raw",
+        "query": "",
+        "url": "https://behavior.test/api/v1/message/id-1/raw",
+        "headers": {},
+        "bodyText": null,
+        "multipartFields": null
+      },
+      "response": {
+        "kind": "text",
+        "status": 200,
+        "mediaType": "text/plain",
+        "body": "string",
+        "value": "string"
+      }
+    },
+    {
+      "id": "behavior-8",
+      "operationId": "ReleaseMessageParams",
+      "kinds": ["error-response", "json-request", "path-serialization", "text-response"],
+      "request": {
+        "method": "POST",
+        "pathTemplate": "/api/v1/message/{ID}/release",
+        "pathParameters": {
+          "ID": "id-1"
+        },
+        "query": [],
+        "headers": {},
+        "body": {
+          "To": ["user1@example.com", "user2@example.com"]
+        },
+        "bodyKind": "json",
+        "contentType": "application/json",
+        "security": []
+      },
+      "expect": {
+        "method": "POST",
+        "path": "/api/v1/message/id-1/release",
+        "query": "",
+        "url": "https://behavior.test/api/v1/message/id-1/release",
+        "headers": {
+          "content-type": "application/json"
+        },
+        "bodyText": "{\"To\":[\"user1@example.com\",\"user2@example.com\"]}",
+        "multipartFields": null
+      },
+      "response": {
+        "kind": "text",
+        "status": 200,
+        "mediaType": "text/plain",
+        "body": "string",
+        "value": "string"
+      }
+    },
+    {
+      "id": "behavior-9",
+      "operationId": "GetMessagesParams",
+      "kinds": ["error-response", "json-response", "query-serialization"],
+      "request": {
+        "method": "GET",
+        "pathTemplate": "/api/v1/messages",
+        "pathParameters": {},
+        "query": [
+          {
+            "name": "start",
+            "style": "form",
+            "explode": true,
+            "value": 0,
+            "serialized": "0"
+          },
+          {
+            "name": "limit",
+            "style": "form",
+            "explode": true,
+            "value": 50,
+            "serialized": "50"
+          }
+        ],
+        "headers": {},
+        "bodyKind": null,
+        "contentType": null,
+        "security": []
+      },
+      "expect": {
+        "method": "GET",
+        "path": "/api/v1/messages",
+        "query": "start=0&limit=50",
+        "url": "https://behavior.test/api/v1/messages?start=0&limit=50",
+        "headers": {},
+        "bodyText": null,
+        "multipartFields": null
+      },
+      "response": {
+        "kind": "json",
+        "status": 200,
+        "mediaType": "application/json",
+        "body": "{\"messages\":[{\"Attachments\":1,\"Bcc\":[{\"Address\":\"Address\",\"Name\":\"Example Name\"}],\"Cc\":[{\"Address\":\"Address\",\"Name\":\"Example Name\"}],\"Created\":\"2024-01-01T00:00:00Z\",\"From\":{\"Address\":\"Address\",\"Name\":\"Example Name\"},\"ID\":\"id-1\",\"MessageID\":\"Message-1\",\"Read\":false,\"ReplyTo\":[{\"Address\":\"Address\",\"Name\":\"Example Name\"}],\"Size\":1,\"Snippet\":\"Snippet\",\"Subject\":\"Subject\",\"Tags\":[\"Tags\"],\"To\":[{\"Address\":\"Address\",\"Name\":\"Example Name\"}],\"Username\":\"Example Name\"}],\"messages_count\":30,\"messages_unread\":30,\"start\":1,\"tags\":[\"tags\"],\"total\":100,\"unread\":1}",
+        "value": {
+          "messages": [
+            {
+              "Attachments": 1,
+              "Bcc": [
+                {
+                  "Address": "Address",
+                  "Name": "Example Name"
+                }
+              ],
+              "Cc": [
+                {
+                  "Address": "Address",
+                  "Name": "Example Name"
+                }
+              ],
+              "Created": "2024-01-01T00:00:00Z",
+              "From": {
+                "Address": "Address",
+                "Name": "Example Name"
+              },
+              "ID": "id-1",
+              "MessageID": "Message-1",
+              "Read": false,
+              "ReplyTo": [
+                {
+                  "Address": "Address",
+                  "Name": "Example Name"
+                }
+              ],
+              "Size": 1,
+              "Snippet": "Snippet",
+              "Subject": "Subject",
+              "Tags": ["Tags"],
+              "To": [
+                {
+                  "Address": "Address",
+                  "Name": "Example Name"
+                }
+              ],
+              "Username": "Example Name"
+            }
+          ],
+          "messages_count": 30,
+          "messages_unread": 30,
+          "start": 1,
+          "tags": ["tags"],
+          "total": 100,
+          "unread": 1
+        }
+      }
+    },
+    {
+      "id": "behavior-10",
+      "operationId": "SetReadStatusParams",
+      "kinds": ["error-response", "json-request", "query-serialization", "text-response"],
+      "request": {
+        "method": "PUT",
+        "pathTemplate": "/api/v1/messages",
+        "pathParameters": {},
+        "query": [
+          {
+            "name": "tz",
+            "style": "form",
+            "explode": true,
+            "value": "tz",
+            "serialized": "tz"
+          }
+        ],
+        "headers": {},
+        "body": {
+          "IDs": ["4oRBnPtCXgAqZniRhzLNmS", "hXayS6wnCgNnt6aFTvmOF6"],
+          "Read": true,
+          "Search": "tag:backups"
+        },
+        "bodyKind": "json",
+        "contentType": "application/json",
+        "security": []
+      },
+      "expect": {
+        "method": "PUT",
+        "path": "/api/v1/messages",
+        "query": "tz=tz",
+        "url": "https://behavior.test/api/v1/messages?tz=tz",
+        "headers": {
+          "content-type": "application/json"
+        },
+        "bodyText": "{\"IDs\":[\"4oRBnPtCXgAqZniRhzLNmS\",\"hXayS6wnCgNnt6aFTvmOF6\"],\"Read\":true,\"Search\":\"tag:backups\"}",
+        "multipartFields": null
+      },
+      "response": {
+        "kind": "text",
+        "status": 200,
+        "mediaType": "text/plain",
+        "body": "string",
+        "value": "string"
+      }
+    },
+    {
+      "id": "behavior-11",
+      "operationId": "DeleteMessagesParams",
+      "kinds": ["error-response", "json-request", "text-response"],
+      "request": {
+        "method": "DELETE",
+        "pathTemplate": "/api/v1/messages",
+        "pathParameters": {},
+        "query": [],
+        "headers": {},
+        "body": {
+          "IDs": ["4oRBnPtCXgAqZniRhzLNmS", "hXayS6wnCgNnt6aFTvmOF6"]
+        },
+        "bodyKind": "json",
+        "contentType": "application/json",
+        "security": []
+      },
+      "expect": {
+        "method": "DELETE",
+        "path": "/api/v1/messages",
+        "query": "",
+        "url": "https://behavior.test/api/v1/messages",
+        "headers": {
+          "content-type": "application/json"
+        },
+        "bodyText": "{\"IDs\":[\"4oRBnPtCXgAqZniRhzLNmS\",\"hXayS6wnCgNnt6aFTvmOF6\"]}",
+        "multipartFields": null
+      },
+      "response": {
+        "kind": "text",
+        "status": 200,
+        "mediaType": "text/plain",
+        "body": "string",
+        "value": "string"
+      }
+    },
+    {
+      "id": "behavior-12",
+      "operationId": "SearchParams",
+      "kinds": ["error-response", "json-response", "query-serialization"],
+      "request": {
+        "method": "GET",
+        "pathTemplate": "/api/v1/search",
+        "pathParameters": {},
+        "query": [
+          {
+            "name": "query",
+            "style": "form",
+            "explode": true,
+            "value": "query",
+            "serialized": "query"
+          },
+          {
+            "name": "start",
+            "style": "form",
+            "explode": true,
+            "value": "0",
+            "serialized": "0"
+          },
+          {
+            "name": "limit",
+            "style": "form",
+            "explode": true,
+            "value": "50",
+            "serialized": "50"
+          },
+          {
+            "name": "tz",
+            "style": "form",
+            "explode": true,
+            "value": "tz",
+            "serialized": "tz"
+          }
+        ],
+        "headers": {},
+        "bodyKind": null,
+        "contentType": null,
+        "security": []
+      },
+      "expect": {
+        "method": "GET",
+        "path": "/api/v1/search",
+        "query": "query=query&start=0&limit=50&tz=tz",
+        "url": "https://behavior.test/api/v1/search?query=query&start=0&limit=50&tz=tz",
+        "headers": {},
+        "bodyText": null,
+        "multipartFields": null
+      },
+      "response": {
+        "kind": "json",
+        "status": 200,
+        "mediaType": "application/json",
+        "body": "{\"messages\":[{\"Attachments\":1,\"Bcc\":[{\"Address\":\"Address\",\"Name\":\"Example Name\"}],\"Cc\":[{\"Address\":\"Address\",\"Name\":\"Example Name\"}],\"Created\":\"2024-01-01T00:00:00Z\",\"From\":{\"Address\":\"Address\",\"Name\":\"Example Name\"},\"ID\":\"id-1\",\"MessageID\":\"Message-1\",\"Read\":false,\"ReplyTo\":[{\"Address\":\"Address\",\"Name\":\"Example Name\"}],\"Size\":1,\"Snippet\":\"Snippet\",\"Subject\":\"Subject\",\"Tags\":[\"Tags\"],\"To\":[{\"Address\":\"Address\",\"Name\":\"Example Name\"}],\"Username\":\"Example Name\"}],\"messages_count\":30,\"messages_unread\":30,\"start\":1,\"tags\":[\"tags\"],\"total\":100,\"unread\":1}",
+        "value": {
+          "messages": [
+            {
+              "Attachments": 1,
+              "Bcc": [
+                {
+                  "Address": "Address",
+                  "Name": "Example Name"
+                }
+              ],
+              "Cc": [
+                {
+                  "Address": "Address",
+                  "Name": "Example Name"
+                }
+              ],
+              "Created": "2024-01-01T00:00:00Z",
+              "From": {
+                "Address": "Address",
+                "Name": "Example Name"
+              },
+              "ID": "id-1",
+              "MessageID": "Message-1",
+              "Read": false,
+              "ReplyTo": [
+                {
+                  "Address": "Address",
+                  "Name": "Example Name"
+                }
+              ],
+              "Size": 1,
+              "Snippet": "Snippet",
+              "Subject": "Subject",
+              "Tags": ["Tags"],
+              "To": [
+                {
+                  "Address": "Address",
+                  "Name": "Example Name"
+                }
+              ],
+              "Username": "Example Name"
+            }
+          ],
+          "messages_count": 30,
+          "messages_unread": 30,
+          "start": 1,
+          "tags": ["tags"],
+          "total": 100,
+          "unread": 1
+        }
+      }
+    },
+    {
+      "id": "behavior-13",
+      "operationId": "DeleteSearchParams",
+      "kinds": ["error-response", "json-response", "query-serialization"],
+      "request": {
+        "method": "DELETE",
+        "pathTemplate": "/api/v1/search",
+        "pathParameters": {},
+        "query": [
+          {
+            "name": "query",
+            "style": "form",
+            "explode": true,
+            "value": "query",
+            "serialized": "query"
+          },
+          {
+            "name": "tz",
+            "style": "form",
+            "explode": true,
+            "value": "tz",
+            "serialized": "tz"
+          }
+        ],
+        "headers": {},
+        "bodyKind": null,
+        "contentType": null,
+        "security": []
+      },
+      "expect": {
+        "method": "DELETE",
+        "path": "/api/v1/search",
+        "query": "query=query&tz=tz",
+        "url": "https://behavior.test/api/v1/search?query=query&tz=tz",
+        "headers": {},
+        "bodyText": null,
+        "multipartFields": null
+      },
+      "response": {
+        "kind": "json",
+        "status": 200,
+        "mediaType": "application/json",
+        "body": "\"string\"",
+        "value": "string"
+      }
+    },
+    {
+      "id": "behavior-14",
+      "operationId": "SendMessageParams",
+      "kinds": ["error-response", "json-request", "json-response"],
+      "request": {
+        "method": "POST",
+        "pathTemplate": "/api/v1/send",
+        "pathParameters": {},
+        "query": [],
+        "headers": {},
+        "body": {
+          "Attachments": [
+            {
+              "Content": "iVBORw0KGgoAAAANSUhEUgAAAEEAAAA8CAMAAAAOlSdoAAAACXBIWXMAAAHrAAAB6wGM2bZBAAAAS1BMVEVHcEwRfnUkZ2gAt4UsSF8At4UtSV4At4YsSV4At4YsSV8At4YsSV4At4YsSV4sSV4At4YsSV4At4YtSV4At4YsSV4At4YtSV8At4YsUWYNAAAAGHRSTlMAAwoXGiktRE5dbnd7kpOlr7zJ0d3h8PD8PCSRAAACWUlEQVR42pXT4ZaqIBSG4W9rhqQYocG+/ys9Y0Z0Br+x3j8zaxUPewFh65K+7yrIMeIY4MT3wPfEJCidKXEMnLaVkxDiELiMz4WEOAZSFghxBIypCOlKiAMgXfIqTnBgSm8CIQ6BImxEUxEckClVQiHGj4Ba4AQHikAIClwTE9KtIghAhUJwoLkmLnCiAHJLRKgIMsEtVUKbBUIwoAg2C4QgQBE6l4VCnApBgSKYLLApCnCa0+96AEMW2BQcmC+Pr3nfp7o5Exy49gIADcIqUELGfeA+bp93LmAJp8QJoEcN3C7NY3sbVANixMyI0nku20/n5/ZRf3KI2k6JEDWQtxcbdGuAqu3TAXG+/799Oyyas1B1MnMiA+XyxHp9q0PUKGPiRAau1fZbLRZV09wZcT8/gHk8QQAxXn8VgaDqcUmU6O/r28nbVwXAqca2mRNtPAF5+zoP2MeN9Fy4NgC6RfcbgE7XITBRYTtOE3U3C2DVff7pk+PkUxgAbvtnPXJaD6DxulMLwOhPS/M3MQkgg1ZFrIXnmfaZoOfpKiFgzeZD/WuKqQEGrfJYkyWf6vlG3xUgTuscnkNkQsb599q124kdpMUjCa/XARHs1gZymVtGt3wLkiFv8rUgTxitYCex5EVGec0Y9VmoDTFBSQte2TfXGXlf7hbdaUM9Sk7fisEN9qfBBTK+FZcvM9fQSdkl2vj4W2oX/bRogO3XasiNH7R0eW7fgRM834ImTg+Lg6BEnx4vz81rhr+MYPBBQg1v8GndEOrthxaCTxNAOut8WKLGZQl+MPz88Q9tAO/hVuSeqQAAAABJRU5ErkJggg==",
+              "ContentID": "mailpit-logo",
+              "ContentType": "image/png",
+              "Filename": "mailpit.png"
+            }
+          ],
+          "Bcc": ["jack@example.com"],
+          "Cc": [
+            {
+              "Email": "manager@example.com",
+              "Name": "Manager"
+            }
+          ],
+          "From": {
+            "Email": "john@example.com",
+            "Name": "John Doe"
+          },
+          "HTML": "<div style=\"text-align:center\"><p style=\"font-family: arial; font-size: 24px;\">Mailpit is <b>awesome</b>!</p><p><img src=\"cid:mailpit-logo\" /></p></div>",
+          "Headers": {
+            "X-IP": "1.2.3.4"
+          },
+          "ReplyTo": [
+            {
+              "Email": "secretary@example.com",
+              "Name": "Secretary"
+            }
+          ],
+          "Subject": "Mailpit message via the HTTP API",
+          "Tags": ["Tag 1", "Tag 2"],
+          "Text": "Mailpit is awesome!",
+          "To": [
+            {
+              "Email": "jane@example.com",
+              "Name": "Jane Doe"
+            }
+          ]
+        },
+        "bodyKind": "json",
+        "contentType": "application/json",
+        "security": []
+      },
+      "expect": {
+        "method": "POST",
+        "path": "/api/v1/send",
+        "query": "",
+        "url": "https://behavior.test/api/v1/send",
+        "headers": {
+          "content-type": "application/json"
+        },
+        "bodyText": "{\"Attachments\":[{\"Content\":\"iVBORw0KGgoAAAANSUhEUgAAAEEAAAA8CAMAAAAOlSdoAAAACXBIWXMAAAHrAAAB6wGM2bZBAAAAS1BMVEVHcEwRfnUkZ2gAt4UsSF8At4UtSV4At4YsSV4At4YsSV8At4YsSV4At4YsSV4sSV4At4YsSV4At4YtSV4At4YsSV4At4YtSV8At4YsUWYNAAAAGHRSTlMAAwoXGiktRE5dbnd7kpOlr7zJ0d3h8PD8PCSRAAACWUlEQVR42pXT4ZaqIBSG4W9rhqQYocG+/ys9Y0Z0Br+x3j8zaxUPewFh65K+7yrIMeIY4MT3wPfEJCidKXEMnLaVkxDiELiMz4WEOAZSFghxBIypCOlKiAMgXfIqTnBgSm8CIQ6BImxEUxEckClVQiHGj4Ba4AQHikAIClwTE9KtIghAhUJwoLkmLnCiAHJLRKgIMsEtVUKbBUIwoAg2C4QgQBE6l4VCnApBgSKYLLApCnCa0+96AEMW2BQcmC+Pr3nfp7o5Exy49gIADcIqUELGfeA+bp93LmAJp8QJoEcN3C7NY3sbVANixMyI0nku20/n5/ZRf3KI2k6JEDWQtxcbdGuAqu3TAXG+/799Oyyas1B1MnMiA+XyxHp9q0PUKGPiRAau1fZbLRZV09wZcT8/gHk8QQAxXn8VgaDqcUmU6O/r28nbVwXAqca2mRNtPAF5+zoP2MeN9Fy4NgC6RfcbgE7XITBRYTtOE3U3C2DVff7pk+PkUxgAbvtnPXJaD6DxulMLwOhPS/M3MQkgg1ZFrIXnmfaZoOfpKiFgzeZD/WuKqQEGrfJYkyWf6vlG3xUgTuscnkNkQsb599q124kdpMUjCa/XARHs1gZymVtGt3wLkiFv8rUgTxitYCex5EVGec0Y9VmoDTFBSQte2TfXGXlf7hbdaUM9Sk7fisEN9qfBBTK+FZcvM9fQSdkl2vj4W2oX/bRogO3XasiNH7R0eW7fgRM834ImTg+Lg6BEnx4vz81rhr+MYPBBQg1v8GndEOrthxaCTxNAOut8WKLGZQl+MPz88Q9tAO/hVuSeqQAAAABJRU5ErkJggg==\",\"ContentID\":\"mailpit-logo\",\"ContentType\":\"image/png\",\"Filename\":\"mailpit.png\"}],\"Bcc\":[\"jack@example.com\"],\"Cc\":[{\"Email\":\"manager@example.com\",\"Name\":\"Manager\"}],\"From\":{\"Email\":\"john@example.com\",\"Name\":\"John Doe\"},\"HTML\":\"<div style=\\\"text-align:center\\\"><p style=\\\"font-family: arial; font-size: 24px;\\\">Mailpit is <b>awesome</b>!</p><p><img src=\\\"cid:mailpit-logo\\\" /></p></div>\",\"Headers\":{\"X-IP\":\"1.2.3.4\"},\"ReplyTo\":[{\"Email\":\"secretary@example.com\",\"Name\":\"Secretary\"}],\"Subject\":\"Mailpit message via the HTTP API\",\"Tags\":[\"Tag 1\",\"Tag 2\"],\"Text\":\"Mailpit is awesome!\",\"To\":[{\"Email\":\"jane@example.com\",\"Name\":\"Jane Doe\"}]}",
+        "multipartFields": null
+      },
+      "response": {
+        "kind": "json",
+        "status": 200,
+        "mediaType": "application/json",
+        "body": "{\"ID\":\"iAfZVVe2UQfNSG5BAjgYwa\"}",
+        "value": {
+          "ID": "iAfZVVe2UQfNSG5BAjgYwa"
+        }
+      }
+    },
+    {
+      "id": "behavior-15",
+      "operationId": "SetTagsParams",
+      "kinds": ["error-response", "json-request", "text-response"],
+      "request": {
+        "method": "PUT",
+        "pathTemplate": "/api/v1/tags",
+        "pathParameters": {},
+        "query": [],
+        "headers": {},
+        "body": {
+          "IDs": ["4oRBnPtCXgAqZniRhzLNmS", "hXayS6wnCgNnt6aFTvmOF6"],
+          "Tags": ["Tag 1", "Tag 2"]
+        },
+        "bodyKind": "json",
+        "contentType": "application/json",
+        "security": []
+      },
+      "expect": {
+        "method": "PUT",
+        "path": "/api/v1/tags",
+        "query": "",
+        "url": "https://behavior.test/api/v1/tags",
+        "headers": {
+          "content-type": "application/json"
+        },
+        "bodyText": "{\"IDs\":[\"4oRBnPtCXgAqZniRhzLNmS\",\"hXayS6wnCgNnt6aFTvmOF6\"],\"Tags\":[\"Tag 1\",\"Tag 2\"]}",
+        "multipartFields": null
+      },
+      "response": {
+        "kind": "text",
+        "status": 200,
+        "mediaType": "text/plain",
+        "body": "string",
+        "value": "string"
+      }
+    },
+    {
+      "id": "behavior-16",
+      "operationId": "RenameTagParams",
+      "kinds": ["error-response", "json-request", "path-serialization", "text-response"],
+      "request": {
+        "method": "PUT",
+        "pathTemplate": "/api/v1/tags/{Tag}",
+        "pathParameters": {
+          "Tag": "Tag"
+        },
+        "query": [],
+        "headers": {},
+        "body": {
+          "Name": "New name"
+        },
+        "bodyKind": "json",
+        "contentType": "application/json",
+        "security": []
+      },
+      "expect": {
+        "method": "PUT",
+        "path": "/api/v1/tags/Tag",
+        "query": "",
+        "url": "https://behavior.test/api/v1/tags/Tag",
+        "headers": {
+          "content-type": "application/json"
+        },
+        "bodyText": "{\"Name\":\"New name\"}",
+        "multipartFields": null
+      },
+      "response": {
+        "kind": "text",
+        "status": 200,
+        "mediaType": "text/plain",
+        "body": "string",
+        "value": "string"
+      }
+    },
+    {
+      "id": "behavior-17",
+      "operationId": "DeleteTagParams",
+      "kinds": ["error-response", "path-serialization", "text-response"],
+      "request": {
+        "method": "DELETE",
+        "pathTemplate": "/api/v1/tags/{Tag}",
+        "pathParameters": {
+          "Tag": "Tag"
+        },
+        "query": [],
+        "headers": {},
+        "bodyKind": null,
+        "contentType": null,
+        "security": []
+      },
+      "expect": {
+        "method": "DELETE",
+        "path": "/api/v1/tags/Tag",
+        "query": "",
+        "url": "https://behavior.test/api/v1/tags/Tag",
+        "headers": {},
+        "bodyText": null,
+        "multipartFields": null
+      },
+      "response": {
+        "kind": "text",
+        "status": 200,
+        "mediaType": "text/plain",
+        "body": "string",
+        "value": "string"
+      }
+    },
+    {
+      "id": "behavior-18",
+      "operationId": "GetMessageHTMLParams",
+      "kinds": ["error-response", "path-serialization", "query-serialization", "text-response"],
+      "request": {
+        "method": "GET",
+        "pathTemplate": "/view/{ID}.html",
+        "pathParameters": {
+          "ID": "id-1"
+        },
+        "query": [
+          {
+            "name": "embed",
+            "style": "form",
+            "explode": true,
+            "value": "embed",
+            "serialized": "embed"
+          }
+        ],
+        "headers": {},
+        "bodyKind": null,
+        "contentType": null,
+        "security": []
+      },
+      "expect": {
+        "method": "GET",
+        "path": "/view/id-1.html",
+        "query": "embed=embed",
+        "url": "https://behavior.test/view/id-1.html?embed=embed",
+        "headers": {},
+        "bodyText": null,
+        "multipartFields": null
+      },
+      "response": {
+        "kind": "text",
+        "status": 200,
+        "mediaType": "text/html",
+        "body": "string",
+        "value": "string"
+      }
+    }
+  ]
+}

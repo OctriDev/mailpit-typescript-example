@@ -1,0 +1,44 @@
+{
+  "name": "@octridev/mailpit-example",
+  "description": "OpenAPI 2.0 documentation for [Mailpit](https://github.com/axllent/mailpit).",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ],
+  "type": "commonjs",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OctriDev/mailpit-typescript-example.git"
+  },
+  "homepage": "https://github.com/OctriDev/mailpit-typescript-example",
+  "bugs": {
+    "url": "https://github.com/OctriDev/mailpit-typescript-example/issues"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "format": "oxfmt --check src test/*.mjs",
+    "lint": "oxlint src test",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run build && node --test \"test/**/*.test.mjs\"",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "oxfmt": "^0.59.0",
+    "oxlint": "^1.0.0",
+    "typescript": "^5.4.0"
+  }
+}

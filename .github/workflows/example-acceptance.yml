@@ -1,0 +1,36 @@
+name: Consumer and live API
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  consumer:
+    name: Package consumer and live Mailpit
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    services:
+      mailpit:
+        image: axllent/mailpit:v1.31.4
+        ports: ['8025:8025']
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+      - run: npm ci
+      - name: Verify deterministic source spec
+        run: |
+          cd spec
+          npm ci
+          node prepare-spec.mjs
+          git diff --exit-code -- openapi.json
+      - name: Native and mock tests
+        run: ./scripts/test
+      - name: Wait for Mailpit
+        run: |
+          for attempt in {1..30}; do
+            if curl --fail --silent http://localhost:8025/readyz; then exit 0; fi
+            sleep 1
+          done
+          exit 1
+      - name: Install package and run live example
+        run: ./scripts/check-example

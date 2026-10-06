@@ -1,0 +1,28 @@
+{
+  "language": "typescript",
+  "generatedAt": "2026-10-06T14:47:43.523Z",
+  "generator": "Octri production",
+  "apiUrl": "https://api.octri.dev/api/v1",
+  "projectId": "6ac506b7219b10381f669b87",
+  "buildId": "6ac50a0f219b10381f66a227",
+  "source": {
+    "repository": "https://github.com/axllent/mailpit",
+    "tag": "v1.31.4",
+    "commit": "ccb524a62b3a14b6a3fd55c1275a16945d10e36b",
+    "originalSha256": "77cd5441b66fabfadaee3fafc84e63c927edc0eaed88590d82745c94b663f3ca",
+    "preparedSha256": "34c47e1d09f8a744bd7783e8a5f8568f5765e57183ef8691eb411cde4b33e160",
+    "operationCount": 25
+  },
+  "artifactSha256": "b17a66934da789b1dc30b2c9bf04b063f00dcaa0e86402da24a8973ce417687b",
+  "preparation": [
+    "Declare MessageSummary Bcc, Cc and ReplyTo nullable",
+    "Hoist send response to named SendMessageResult model",
+    "Inline successful shared responses before conversion to preserve operation media types",
+    "Declare binary response schema format"
+  ],
+  "postGeneration": [
+    "Apply native formatter",
+    "Preserve executable script modes",
+    "Add examples, locked spec preparation, provenance, documentation and consumer CI"
+  ]
+}

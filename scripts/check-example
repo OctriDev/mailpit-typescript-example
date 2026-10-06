@@ -1,0 +1,17 @@
+#!/bin/sh
+set -eu
+repo_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+cd "$repo_root"
+npm run build
+npx tsc --strict --noEmit --module NodeNext --target ES2022 examples/quickstart.mts
+npx oxlint examples
+task_consumer=$(mktemp -d)
+trap 'rm -rf "$task_consumer"' EXIT HUP INT TERM
+npm pack --pack-destination "$task_consumer" --json > "$task_consumer/package.json.log"
+task_package=$(node -p "JSON.parse(require('fs').readFileSync(process.argv[1], 'utf8'))[0].filename" "$task_consumer/package.json.log")
+cp examples/quickstart.mts "$task_consumer/quickstart.mts"
+cd "$task_consumer"
+npm init --yes >/dev/null
+npm install --ignore-scripts "./$task_package"
+"$repo_root/node_modules/.bin/tsc" --strict --noEmit --skipLibCheck --module NodeNext --target ES2022 --typeRoots "$repo_root/node_modules/@types" quickstart.mts
+node --experimental-strip-types quickstart.mts

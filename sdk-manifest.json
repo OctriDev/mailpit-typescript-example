@@ -1,0 +1,5824 @@
+{
+  "schemaTitle": "Mailpit API",
+  "schemaVersion": "v1",
+  "language": "typescript",
+  "enumStrategy": "open",
+  "unitTests": "include",
+  "operations": [
+    {
+      "id": "appInformation",
+      "wireOperationId": "AppInformation",
+      "method": "get",
+      "path": "/api/v1/info",
+      "namespace": ["application"],
+      "streams": false,
+      "mode": "normal",
+      "streamSelector": null,
+      "requestMediaType": null,
+      "publicMethods": [
+        {
+          "mode": "normal",
+          "name": "AppInformation"
+        }
+      ],
+      "requestModes": [],
+      "responseModes": [
+        {
+          "statusCode": "200",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": "#/components/schemas/AppInformation",
+          "schemaType": {
+            "type": "ref",
+            "format": null,
+            "ref": "AppInformation",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "errorResponseModes": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "params": [],
+      "bindings": []
+    },
+    {
+      "id": "attachmentParams",
+      "wireOperationId": "AttachmentParams",
+      "method": "get",
+      "path": "/api/v1/message/{ID}/part/{PartID}",
+      "namespace": ["message"],
+      "streams": false,
+      "mode": "normal",
+      "streamSelector": null,
+      "requestMediaType": null,
+      "publicMethods": [
+        {
+          "mode": "normal",
+          "name": "AttachmentParams"
+        }
+      ],
+      "requestModes": [],
+      "responseModes": [
+        {
+          "statusCode": "200",
+          "mediaType": "application/*",
+          "decoderKind": "bytes",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": "binary",
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        },
+        {
+          "statusCode": "200",
+          "mediaType": "image/*",
+          "decoderKind": "bytes",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": "binary",
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        },
+        {
+          "statusCode": "200",
+          "mediaType": "text/*",
+          "decoderKind": "bytes",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": "binary",
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "errorResponseModes": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        },
+        {
+          "statusCode": "404",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "params": [
+        {
+          "name": "ID",
+          "in": "path",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "simple",
+          "explode": false
+        },
+        {
+          "name": "PartID",
+          "in": "path",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "simple",
+          "explode": false
+        }
+      ],
+      "bindings": [
+        {
+          "name": "ID",
+          "in": "path",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "simple",
+          "explode": false
+        },
+        {
+          "name": "PartID",
+          "in": "path",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "simple",
+          "explode": false
+        }
+      ]
+    },
+    {
+      "id": "deleteMessagesParams",
+      "wireOperationId": "DeleteMessagesParams",
+      "method": "delete",
+      "path": "/api/v1/messages",
+      "namespace": ["messages"],
+      "streams": false,
+      "mode": "normal",
+      "streamSelector": null,
+      "requestMediaType": "application/json",
+      "publicMethods": [
+        {
+          "mode": "normal",
+          "name": "DeleteMessagesParams"
+        }
+      ],
+      "requestModes": [
+        {
+          "mediaType": "application/json",
+          "encoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "object",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "bodyShape": "fields",
+          "fields": [
+            {
+              "name": "IDs",
+              "required": false,
+              "repeated": true,
+              "partKind": "scalar",
+              "contentType": null
+            }
+          ]
+        }
+      ],
+      "responseModes": [
+        {
+          "statusCode": "200",
+          "mediaType": "text/plain",
+          "decoderKind": "text",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "errorResponseModes": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "params": [
+        {
+          "name": "IDs",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "array",
+          "wireType": "array",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        }
+      ],
+      "bindings": [
+        {
+          "name": "IDs",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "array",
+          "wireType": "array",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        }
+      ]
+    },
+    {
+      "id": "deleteSearchParams",
+      "wireOperationId": "DeleteSearchParams",
+      "method": "delete",
+      "path": "/api/v1/search",
+      "namespace": ["messages"],
+      "streams": false,
+      "mode": "normal",
+      "streamSelector": null,
+      "requestMediaType": null,
+      "publicMethods": [
+        {
+          "mode": "normal",
+          "name": "DeleteSearchParams"
+        }
+      ],
+      "requestModes": [],
+      "responseModes": [
+        {
+          "statusCode": "200",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "errorResponseModes": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "params": [
+        {
+          "name": "query",
+          "in": "query",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "form",
+          "explode": true
+        },
+        {
+          "name": "tz",
+          "in": "query",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "form",
+          "explode": true
+        }
+      ],
+      "bindings": [
+        {
+          "name": "query",
+          "in": "query",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "form",
+          "explode": true
+        },
+        {
+          "name": "tz",
+          "in": "query",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "form",
+          "explode": true
+        }
+      ]
+    },
+    {
+      "id": "deleteTagParams",
+      "wireOperationId": "DeleteTagParams",
+      "method": "delete",
+      "path": "/api/v1/tags/{Tag}",
+      "namespace": ["tags"],
+      "streams": false,
+      "mode": "normal",
+      "streamSelector": null,
+      "requestMediaType": null,
+      "publicMethods": [
+        {
+          "mode": "normal",
+          "name": "DeleteTagParams"
+        }
+      ],
+      "requestModes": [],
+      "responseModes": [
+        {
+          "statusCode": "200",
+          "mediaType": "text/plain",
+          "decoderKind": "text",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "errorResponseModes": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "params": [
+        {
+          "name": "Tag",
+          "in": "path",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "simple",
+          "explode": false
+        }
+      ],
+      "bindings": [
+        {
+          "name": "Tag",
+          "in": "path",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "simple",
+          "explode": false
+        }
+      ]
+    },
+    {
+      "id": "downloadRawParams",
+      "wireOperationId": "DownloadRawParams",
+      "method": "get",
+      "path": "/api/v1/message/{ID}/raw",
+      "namespace": ["message"],
+      "streams": false,
+      "mode": "normal",
+      "streamSelector": null,
+      "requestMediaType": null,
+      "publicMethods": [
+        {
+          "mode": "normal",
+          "name": "DownloadRawParams"
+        }
+      ],
+      "requestModes": [],
+      "responseModes": [
+        {
+          "statusCode": "200",
+          "mediaType": "text/plain",
+          "decoderKind": "text",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "errorResponseModes": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        },
+        {
+          "statusCode": "404",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "params": [
+        {
+          "name": "ID",
+          "in": "path",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "simple",
+          "explode": false
+        }
+      ],
+      "bindings": [
+        {
+          "name": "ID",
+          "in": "path",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "simple",
+          "explode": false
+        }
+      ]
+    },
+    {
+      "id": "getAllTags",
+      "wireOperationId": "GetAllTags",
+      "method": "get",
+      "path": "/api/v1/tags",
+      "namespace": ["tags"],
+      "streams": false,
+      "mode": "normal",
+      "streamSelector": null,
+      "requestMediaType": null,
+      "publicMethods": [
+        {
+          "mode": "normal",
+          "name": "GetAllTags"
+        }
+      ],
+      "requestModes": [],
+      "responseModes": [
+        {
+          "statusCode": "200",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "array",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": {
+              "type": "string",
+              "format": null,
+              "ref": null,
+              "nullable": false,
+              "items": null,
+              "mapValue": null,
+              "variants": null
+            },
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "errorResponseModes": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "params": [],
+      "bindings": []
+    },
+    {
+      "id": "getChaos",
+      "wireOperationId": "getChaos",
+      "method": "get",
+      "path": "/api/v1/chaos",
+      "namespace": ["testing"],
+      "streams": false,
+      "mode": "normal",
+      "streamSelector": null,
+      "requestMediaType": null,
+      "publicMethods": [
+        {
+          "mode": "normal",
+          "name": "getChaos"
+        }
+      ],
+      "requestModes": [],
+      "responseModes": [
+        {
+          "statusCode": "200",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": "#/components/schemas/ChaosTriggers",
+          "schemaType": {
+            "type": "ref",
+            "format": null,
+            "ref": "ChaosTriggers",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "errorResponseModes": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "params": [],
+      "bindings": []
+    },
+    {
+      "id": "getHeadersParams",
+      "wireOperationId": "GetHeadersParams",
+      "method": "get",
+      "path": "/api/v1/message/{ID}/headers",
+      "namespace": ["message"],
+      "streams": false,
+      "mode": "normal",
+      "streamSelector": null,
+      "requestMediaType": null,
+      "publicMethods": [
+        {
+          "mode": "normal",
+          "name": "GetHeadersParams"
+        }
+      ],
+      "requestModes": [],
+      "responseModes": [
+        {
+          "statusCode": "200",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "object",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": {
+              "type": "array",
+              "format": null,
+              "ref": null,
+              "nullable": false,
+              "items": {
+                "type": "string",
+                "format": null,
+                "ref": null,
+                "nullable": false,
+                "items": null,
+                "mapValue": null,
+                "variants": null
+              },
+              "mapValue": null,
+              "variants": null
+            },
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "errorResponseModes": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        },
+        {
+          "statusCode": "404",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "params": [
+        {
+          "name": "ID",
+          "in": "path",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "simple",
+          "explode": false
+        }
+      ],
+      "bindings": [
+        {
+          "name": "ID",
+          "in": "path",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "simple",
+          "explode": false
+        }
+      ]
+    },
+    {
+      "id": "getMessageHtmlParams",
+      "wireOperationId": "GetMessageHTMLParams",
+      "method": "get",
+      "path": "/view/{ID}.html",
+      "namespace": ["testing"],
+      "streams": false,
+      "mode": "normal",
+      "streamSelector": null,
+      "requestMediaType": null,
+      "publicMethods": [
+        {
+          "mode": "normal",
+          "name": "GetMessageHTMLParams"
+        }
+      ],
+      "requestModes": [],
+      "responseModes": [
+        {
+          "statusCode": "200",
+          "mediaType": "text/html",
+          "decoderKind": "text",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "errorResponseModes": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        },
+        {
+          "statusCode": "404",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "params": [
+        {
+          "name": "embed",
+          "in": "query",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "form",
+          "explode": true
+        },
+        {
+          "name": "ID",
+          "in": "path",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "simple",
+          "explode": false
+        }
+      ],
+      "bindings": [
+        {
+          "name": "ID",
+          "in": "path",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "simple",
+          "explode": false
+        },
+        {
+          "name": "embed",
+          "in": "query",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "form",
+          "explode": true
+        }
+      ]
+    },
+    {
+      "id": "getMessageParams",
+      "wireOperationId": "GetMessageParams",
+      "method": "get",
+      "path": "/api/v1/message/{ID}",
+      "namespace": ["message"],
+      "streams": false,
+      "mode": "normal",
+      "streamSelector": null,
+      "requestMediaType": null,
+      "publicMethods": [
+        {
+          "mode": "normal",
+          "name": "GetMessageParams"
+        }
+      ],
+      "requestModes": [],
+      "responseModes": [
+        {
+          "statusCode": "200",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": "#/components/schemas/Message",
+          "schemaType": {
+            "type": "ref",
+            "format": null,
+            "ref": "Message",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "errorResponseModes": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        },
+        {
+          "statusCode": "404",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "params": [
+        {
+          "name": "ID",
+          "in": "path",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "simple",
+          "explode": false
+        }
+      ],
+      "bindings": [
+        {
+          "name": "ID",
+          "in": "path",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "simple",
+          "explode": false
+        }
+      ]
+    },
+    {
+      "id": "getMessagesParams",
+      "wireOperationId": "GetMessagesParams",
+      "method": "get",
+      "path": "/api/v1/messages",
+      "namespace": ["messages"],
+      "streams": false,
+      "mode": "normal",
+      "streamSelector": null,
+      "requestMediaType": null,
+      "publicMethods": [
+        {
+          "mode": "normal",
+          "name": "GetMessagesParams"
+        }
+      ],
+      "requestModes": [],
+      "responseModes": [
+        {
+          "statusCode": "200",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": "#/components/schemas/MessagesSummary",
+          "schemaType": {
+            "type": "ref",
+            "format": null,
+            "ref": "MessagesSummary",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "errorResponseModes": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "params": [
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "nullable": false,
+          "type": "integer",
+          "wireType": "integer",
+          "declaredValue": null,
+          "style": "form",
+          "explode": true
+        },
+        {
+          "name": "start",
+          "in": "query",
+          "required": false,
+          "nullable": false,
+          "type": "integer",
+          "wireType": "integer",
+          "declaredValue": null,
+          "style": "form",
+          "explode": true
+        }
+      ],
+      "bindings": [
+        {
+          "name": "start",
+          "in": "query",
+          "required": false,
+          "nullable": false,
+          "type": "integer",
+          "wireType": "integer",
+          "declaredValue": null,
+          "style": "form",
+          "explode": true
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "nullable": false,
+          "type": "integer",
+          "wireType": "integer",
+          "declaredValue": null,
+          "style": "form",
+          "explode": true
+        }
+      ]
+    },
+    {
+      "id": "getMessageTextParams",
+      "wireOperationId": "GetMessageTextParams",
+      "method": "get",
+      "path": "/view/{ID}.txt",
+      "namespace": ["testing"],
+      "streams": false,
+      "mode": "normal",
+      "streamSelector": null,
+      "requestMediaType": null,
+      "publicMethods": [
+        {
+          "mode": "normal",
+          "name": "GetMessageTextParams"
+        }
+      ],
+      "requestModes": [],
+      "responseModes": [
+        {
+          "statusCode": "200",
+          "mediaType": "text/plain",
+          "decoderKind": "text",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "errorResponseModes": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        },
+        {
+          "statusCode": "404",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "params": [
+        {
+          "name": "ID",
+          "in": "path",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "simple",
+          "explode": false
+        }
+      ],
+      "bindings": [
+        {
+          "name": "ID",
+          "in": "path",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "simple",
+          "explode": false
+        }
+      ]
+    },
+    {
+      "id": "htmlCheckParams",
+      "wireOperationId": "HTMLCheckParams",
+      "method": "get",
+      "path": "/api/v1/message/{ID}/html-check",
+      "namespace": ["other"],
+      "streams": false,
+      "mode": "normal",
+      "streamSelector": null,
+      "requestMediaType": null,
+      "publicMethods": [
+        {
+          "mode": "normal",
+          "name": "HTMLCheckParams"
+        }
+      ],
+      "requestModes": [],
+      "responseModes": [
+        {
+          "statusCode": "200",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": "#/components/schemas/HTMLCheckResponse",
+          "schemaType": {
+            "type": "ref",
+            "format": null,
+            "ref": "HTMLCheckResponse",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "errorResponseModes": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        },
+        {
+          "statusCode": "404",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "params": [
+        {
+          "name": "ID",
+          "in": "path",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "simple",
+          "explode": false
+        }
+      ],
+      "bindings": [
+        {
+          "name": "ID",
+          "in": "path",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "simple",
+          "explode": false
+        }
+      ]
+    },
+    {
+      "id": "linkCheckParams",
+      "wireOperationId": "LinkCheckParams",
+      "method": "get",
+      "path": "/api/v1/message/{ID}/link-check",
+      "namespace": ["other"],
+      "streams": false,
+      "mode": "normal",
+      "streamSelector": null,
+      "requestMediaType": null,
+      "publicMethods": [
+        {
+          "mode": "normal",
+          "name": "LinkCheckParams"
+        }
+      ],
+      "requestModes": [],
+      "responseModes": [
+        {
+          "statusCode": "200",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": "#/components/schemas/LinkCheckResponse",
+          "schemaType": {
+            "type": "ref",
+            "format": null,
+            "ref": "LinkCheckResponse",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "errorResponseModes": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        },
+        {
+          "statusCode": "404",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "params": [
+        {
+          "name": "follow",
+          "in": "query",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "form",
+          "explode": true
+        },
+        {
+          "name": "ID",
+          "in": "path",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "simple",
+          "explode": false
+        }
+      ],
+      "bindings": [
+        {
+          "name": "ID",
+          "in": "path",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "simple",
+          "explode": false
+        },
+        {
+          "name": "follow",
+          "in": "query",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "form",
+          "explode": true
+        }
+      ]
+    },
+    {
+      "id": "releaseMessageParams",
+      "wireOperationId": "ReleaseMessageParams",
+      "method": "post",
+      "path": "/api/v1/message/{ID}/release",
+      "namespace": ["message"],
+      "streams": false,
+      "mode": "normal",
+      "streamSelector": null,
+      "requestMediaType": "application/json",
+      "publicMethods": [
+        {
+          "mode": "normal",
+          "name": "ReleaseMessageParams"
+        }
+      ],
+      "requestModes": [
+        {
+          "mediaType": "application/json",
+          "encoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "object",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "bodyShape": "fields",
+          "fields": [
+            {
+              "name": "To",
+              "required": true,
+              "repeated": true,
+              "partKind": "scalar",
+              "contentType": null
+            }
+          ]
+        }
+      ],
+      "responseModes": [
+        {
+          "statusCode": "200",
+          "mediaType": "text/plain",
+          "decoderKind": "text",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "errorResponseModes": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        },
+        {
+          "statusCode": "404",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "params": [
+        {
+          "name": "ID",
+          "in": "path",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "simple",
+          "explode": false
+        },
+        {
+          "name": "To",
+          "in": "body",
+          "required": true,
+          "nullable": false,
+          "type": "array",
+          "wireType": "array",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        }
+      ],
+      "bindings": [
+        {
+          "name": "ID",
+          "in": "path",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "simple",
+          "explode": false
+        },
+        {
+          "name": "To",
+          "in": "body",
+          "required": true,
+          "nullable": false,
+          "type": "array",
+          "wireType": "array",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        }
+      ]
+    },
+    {
+      "id": "renameTagParams",
+      "wireOperationId": "RenameTagParams",
+      "method": "put",
+      "path": "/api/v1/tags/{Tag}",
+      "namespace": ["tags"],
+      "streams": false,
+      "mode": "normal",
+      "streamSelector": null,
+      "requestMediaType": "application/json",
+      "publicMethods": [
+        {
+          "mode": "normal",
+          "name": "RenameTagParams"
+        }
+      ],
+      "requestModes": [
+        {
+          "mediaType": "application/json",
+          "encoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "object",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "bodyShape": "fields",
+          "fields": [
+            {
+              "name": "Name",
+              "required": true,
+              "repeated": false,
+              "partKind": "scalar",
+              "contentType": null
+            }
+          ]
+        }
+      ],
+      "responseModes": [
+        {
+          "statusCode": "200",
+          "mediaType": "text/plain",
+          "decoderKind": "text",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "errorResponseModes": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "params": [
+        {
+          "name": "Name",
+          "in": "body",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        },
+        {
+          "name": "Tag",
+          "in": "path",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "simple",
+          "explode": false
+        }
+      ],
+      "bindings": [
+        {
+          "name": "Tag",
+          "in": "path",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "simple",
+          "explode": false
+        },
+        {
+          "name": "Name",
+          "in": "body",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        }
+      ]
+    },
+    {
+      "id": "searchParams",
+      "wireOperationId": "SearchParams",
+      "method": "get",
+      "path": "/api/v1/search",
+      "namespace": ["messages"],
+      "streams": false,
+      "mode": "normal",
+      "streamSelector": null,
+      "requestMediaType": null,
+      "publicMethods": [
+        {
+          "mode": "normal",
+          "name": "SearchParams"
+        }
+      ],
+      "requestModes": [],
+      "responseModes": [
+        {
+          "statusCode": "200",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": "#/components/schemas/MessagesSummary",
+          "schemaType": {
+            "type": "ref",
+            "format": null,
+            "ref": "MessagesSummary",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "errorResponseModes": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "params": [
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "form",
+          "explode": true
+        },
+        {
+          "name": "query",
+          "in": "query",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "form",
+          "explode": true
+        },
+        {
+          "name": "start",
+          "in": "query",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "form",
+          "explode": true
+        },
+        {
+          "name": "tz",
+          "in": "query",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "form",
+          "explode": true
+        }
+      ],
+      "bindings": [
+        {
+          "name": "query",
+          "in": "query",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "form",
+          "explode": true
+        },
+        {
+          "name": "start",
+          "in": "query",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "form",
+          "explode": true
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "form",
+          "explode": true
+        },
+        {
+          "name": "tz",
+          "in": "query",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "form",
+          "explode": true
+        }
+      ]
+    },
+    {
+      "id": "sendMessageParams",
+      "wireOperationId": "SendMessageParams",
+      "method": "post",
+      "path": "/api/v1/send",
+      "namespace": ["message"],
+      "streams": false,
+      "mode": "normal",
+      "streamSelector": null,
+      "requestMediaType": "application/json",
+      "publicMethods": [
+        {
+          "mode": "normal",
+          "name": "SendMessageParams"
+        }
+      ],
+      "requestModes": [
+        {
+          "mediaType": "application/json",
+          "encoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "object",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "bodyShape": "fields",
+          "fields": [
+            {
+              "name": "Attachments",
+              "required": false,
+              "repeated": true,
+              "partKind": "json",
+              "contentType": null
+            },
+            {
+              "name": "Bcc",
+              "required": false,
+              "repeated": true,
+              "partKind": "scalar",
+              "contentType": null
+            },
+            {
+              "name": "Cc",
+              "required": false,
+              "repeated": true,
+              "partKind": "json",
+              "contentType": null
+            },
+            {
+              "name": "From",
+              "required": true,
+              "repeated": false,
+              "partKind": "json",
+              "contentType": null
+            },
+            {
+              "name": "HTML",
+              "required": false,
+              "repeated": false,
+              "partKind": "scalar",
+              "contentType": null
+            },
+            {
+              "name": "Headers",
+              "required": false,
+              "repeated": false,
+              "partKind": "json",
+              "contentType": null
+            },
+            {
+              "name": "ReplyTo",
+              "required": false,
+              "repeated": true,
+              "partKind": "json",
+              "contentType": null
+            },
+            {
+              "name": "Subject",
+              "required": false,
+              "repeated": false,
+              "partKind": "scalar",
+              "contentType": null
+            },
+            {
+              "name": "Tags",
+              "required": false,
+              "repeated": true,
+              "partKind": "scalar",
+              "contentType": null
+            },
+            {
+              "name": "Text",
+              "required": false,
+              "repeated": false,
+              "partKind": "scalar",
+              "contentType": null
+            },
+            {
+              "name": "To",
+              "required": false,
+              "repeated": true,
+              "partKind": "json",
+              "contentType": null
+            }
+          ]
+        }
+      ],
+      "responseModes": [
+        {
+          "statusCode": "200",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": "#/components/schemas/SendMessageResult",
+          "schemaType": {
+            "type": "ref",
+            "format": null,
+            "ref": "SendMessageResult",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "errorResponseModes": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "object",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "params": [
+        {
+          "name": "Attachments",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "array",
+          "wireType": "array",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        },
+        {
+          "name": "Bcc",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "array",
+          "wireType": "array",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        },
+        {
+          "name": "Cc",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "array",
+          "wireType": "array",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        },
+        {
+          "name": "From",
+          "in": "body",
+          "required": true,
+          "nullable": false,
+          "type": "object",
+          "wireType": "object",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        },
+        {
+          "name": "Headers",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "object",
+          "wireType": "object",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        },
+        {
+          "name": "HTML",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        },
+        {
+          "name": "ReplyTo",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "array",
+          "wireType": "array",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        },
+        {
+          "name": "Subject",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        },
+        {
+          "name": "Tags",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "array",
+          "wireType": "array",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        },
+        {
+          "name": "Text",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        },
+        {
+          "name": "To",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "array",
+          "wireType": "array",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        }
+      ],
+      "bindings": [
+        {
+          "name": "From",
+          "in": "body",
+          "required": true,
+          "nullable": false,
+          "type": "object",
+          "wireType": "object",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        },
+        {
+          "name": "Attachments",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "array",
+          "wireType": "array",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        },
+        {
+          "name": "Bcc",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "array",
+          "wireType": "array",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        },
+        {
+          "name": "Cc",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "array",
+          "wireType": "array",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        },
+        {
+          "name": "HTML",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        },
+        {
+          "name": "Headers",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "object",
+          "wireType": "object",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        },
+        {
+          "name": "ReplyTo",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "array",
+          "wireType": "array",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        },
+        {
+          "name": "Subject",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        },
+        {
+          "name": "Tags",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "array",
+          "wireType": "array",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        },
+        {
+          "name": "Text",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        },
+        {
+          "name": "To",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "array",
+          "wireType": "array",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        }
+      ]
+    },
+    {
+      "id": "setChaosParams",
+      "wireOperationId": "setChaosParams",
+      "method": "put",
+      "path": "/api/v1/chaos",
+      "namespace": ["testing"],
+      "streams": false,
+      "mode": "normal",
+      "streamSelector": null,
+      "requestMediaType": "application/json",
+      "publicMethods": [
+        {
+          "mode": "normal",
+          "name": "setChaosParams"
+        }
+      ],
+      "requestModes": [
+        {
+          "mediaType": "application/json",
+          "encoderKind": "json",
+          "schemaRef": "#/components/schemas/ChaosTriggers",
+          "schemaType": {
+            "type": "ref",
+            "format": null,
+            "ref": "ChaosTriggers",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "bodyShape": "fields",
+          "fields": [
+            {
+              "name": "Authentication",
+              "required": false,
+              "repeated": false,
+              "partKind": "json",
+              "contentType": null
+            },
+            {
+              "name": "Recipient",
+              "required": false,
+              "repeated": false,
+              "partKind": "json",
+              "contentType": null
+            },
+            {
+              "name": "Sender",
+              "required": false,
+              "repeated": false,
+              "partKind": "json",
+              "contentType": null
+            }
+          ]
+        }
+      ],
+      "responseModes": [
+        {
+          "statusCode": "200",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": "#/components/schemas/ChaosTriggers",
+          "schemaType": {
+            "type": "ref",
+            "format": null,
+            "ref": "ChaosTriggers",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "errorResponseModes": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "params": [
+        {
+          "name": "Authentication",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "ChaosTrigger",
+          "wireType": "object",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        },
+        {
+          "name": "Recipient",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "ChaosTrigger",
+          "wireType": "object",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        },
+        {
+          "name": "Sender",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "ChaosTrigger",
+          "wireType": "object",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        }
+      ],
+      "bindings": [
+        {
+          "name": "Authentication",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "ChaosTrigger",
+          "wireType": "object",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        },
+        {
+          "name": "Recipient",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "ChaosTrigger",
+          "wireType": "object",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        },
+        {
+          "name": "Sender",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "ChaosTrigger",
+          "wireType": "object",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        }
+      ]
+    },
+    {
+      "id": "setReadStatusParams",
+      "wireOperationId": "SetReadStatusParams",
+      "method": "put",
+      "path": "/api/v1/messages",
+      "namespace": ["messages"],
+      "streams": false,
+      "mode": "normal",
+      "streamSelector": null,
+      "requestMediaType": "application/json",
+      "publicMethods": [
+        {
+          "mode": "normal",
+          "name": "SetReadStatusParams"
+        }
+      ],
+      "requestModes": [
+        {
+          "mediaType": "application/json",
+          "encoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "object",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "bodyShape": "fields",
+          "fields": [
+            {
+              "name": "IDs",
+              "required": false,
+              "repeated": true,
+              "partKind": "scalar",
+              "contentType": null
+            },
+            {
+              "name": "Read",
+              "required": false,
+              "repeated": false,
+              "partKind": "scalar",
+              "contentType": null
+            },
+            {
+              "name": "Search",
+              "required": false,
+              "repeated": false,
+              "partKind": "scalar",
+              "contentType": null
+            }
+          ]
+        }
+      ],
+      "responseModes": [
+        {
+          "statusCode": "200",
+          "mediaType": "text/plain",
+          "decoderKind": "text",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "errorResponseModes": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "params": [
+        {
+          "name": "IDs",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "array",
+          "wireType": "array",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        },
+        {
+          "name": "Read",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "boolean",
+          "wireType": "boolean",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        },
+        {
+          "name": "Search",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        },
+        {
+          "name": "tz",
+          "in": "query",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "form",
+          "explode": true
+        }
+      ],
+      "bindings": [
+        {
+          "name": "tz",
+          "in": "query",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "form",
+          "explode": true
+        },
+        {
+          "name": "IDs",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "array",
+          "wireType": "array",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        },
+        {
+          "name": "Read",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "boolean",
+          "wireType": "boolean",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        },
+        {
+          "name": "Search",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        }
+      ]
+    },
+    {
+      "id": "setTagsParams",
+      "wireOperationId": "SetTagsParams",
+      "method": "put",
+      "path": "/api/v1/tags",
+      "namespace": ["tags"],
+      "streams": false,
+      "mode": "normal",
+      "streamSelector": null,
+      "requestMediaType": "application/json",
+      "publicMethods": [
+        {
+          "mode": "normal",
+          "name": "SetTagsParams"
+        }
+      ],
+      "requestModes": [
+        {
+          "mediaType": "application/json",
+          "encoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "object",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "bodyShape": "fields",
+          "fields": [
+            {
+              "name": "IDs",
+              "required": true,
+              "repeated": true,
+              "partKind": "scalar",
+              "contentType": null
+            },
+            {
+              "name": "Tags",
+              "required": true,
+              "repeated": true,
+              "partKind": "scalar",
+              "contentType": null
+            }
+          ]
+        }
+      ],
+      "responseModes": [
+        {
+          "statusCode": "200",
+          "mediaType": "text/plain",
+          "decoderKind": "text",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "errorResponseModes": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "params": [
+        {
+          "name": "IDs",
+          "in": "body",
+          "required": true,
+          "nullable": false,
+          "type": "array",
+          "wireType": "array",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        },
+        {
+          "name": "Tags",
+          "in": "body",
+          "required": true,
+          "nullable": false,
+          "type": "array",
+          "wireType": "array",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        }
+      ],
+      "bindings": [
+        {
+          "name": "IDs",
+          "in": "body",
+          "required": true,
+          "nullable": false,
+          "type": "array",
+          "wireType": "array",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        },
+        {
+          "name": "Tags",
+          "in": "body",
+          "required": true,
+          "nullable": false,
+          "type": "array",
+          "wireType": "array",
+          "declaredValue": null,
+          "mediaTypes": ["application/json"]
+        }
+      ]
+    },
+    {
+      "id": "spamAssassinCheckParams",
+      "wireOperationId": "SpamAssassinCheckParams",
+      "method": "get",
+      "path": "/api/v1/message/{ID}/sa-check",
+      "namespace": ["other"],
+      "streams": false,
+      "mode": "normal",
+      "streamSelector": null,
+      "requestMediaType": null,
+      "publicMethods": [
+        {
+          "mode": "normal",
+          "name": "SpamAssassinCheckParams"
+        }
+      ],
+      "requestModes": [],
+      "responseModes": [
+        {
+          "statusCode": "200",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": "#/components/schemas/SpamAssassinResponse",
+          "schemaType": {
+            "type": "ref",
+            "format": null,
+            "ref": "SpamAssassinResponse",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "errorResponseModes": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        },
+        {
+          "statusCode": "404",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "params": [
+        {
+          "name": "ID",
+          "in": "path",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "simple",
+          "explode": false
+        }
+      ],
+      "bindings": [
+        {
+          "name": "ID",
+          "in": "path",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "simple",
+          "explode": false
+        }
+      ]
+    },
+    {
+      "id": "thumbnailParams",
+      "wireOperationId": "ThumbnailParams",
+      "method": "get",
+      "path": "/api/v1/message/{ID}/part/{PartID}/thumb",
+      "namespace": ["message"],
+      "streams": false,
+      "mode": "normal",
+      "streamSelector": null,
+      "requestMediaType": null,
+      "publicMethods": [
+        {
+          "mode": "normal",
+          "name": "ThumbnailParams"
+        }
+      ],
+      "requestModes": [],
+      "responseModes": [
+        {
+          "statusCode": "200",
+          "mediaType": "image/jpeg",
+          "decoderKind": "bytes",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": "binary",
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "errorResponseModes": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "params": [
+        {
+          "name": "ID",
+          "in": "path",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "simple",
+          "explode": false
+        },
+        {
+          "name": "PartID",
+          "in": "path",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "simple",
+          "explode": false
+        }
+      ],
+      "bindings": [
+        {
+          "name": "ID",
+          "in": "path",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "simple",
+          "explode": false
+        },
+        {
+          "name": "PartID",
+          "in": "path",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "wireType": "string",
+          "declaredValue": null,
+          "style": "simple",
+          "explode": false
+        }
+      ]
+    },
+    {
+      "id": "webUiConfigurationResponse",
+      "wireOperationId": "WebUIConfigurationResponse",
+      "method": "get",
+      "path": "/api/v1/webui",
+      "namespace": ["application"],
+      "streams": false,
+      "mode": "normal",
+      "streamSelector": null,
+      "requestMediaType": null,
+      "publicMethods": [
+        {
+          "mode": "normal",
+          "name": "WebUIConfigurationResponse"
+        }
+      ],
+      "requestModes": [],
+      "responseModes": [
+        {
+          "statusCode": "200",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": "#/components/schemas/WebUIConfiguration",
+          "schemaType": {
+            "type": "ref",
+            "format": null,
+            "ref": "WebUIConfiguration",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "errorResponseModes": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "params": [],
+      "bindings": []
+    }
+  ],
+  "models": [
+    {
+      "name": "Address",
+      "kind": "object",
+      "type": {
+        "type": "object",
+        "format": null,
+        "ref": null,
+        "nullable": false,
+        "items": null,
+        "mapValue": null,
+        "variants": null
+      },
+      "properties": [
+        {
+          "name": "Address",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        }
+      ],
+      "values": []
+    },
+    {
+      "name": "AppInformation",
+      "kind": "object",
+      "type": {
+        "type": "object",
+        "format": null,
+        "ref": null,
+        "nullable": false,
+        "items": null,
+        "mapValue": null,
+        "variants": null
+      },
+      "properties": [
+        {
+          "name": "Database",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "DatabaseSize",
+          "required": false,
+          "type": "integer",
+          "format": "uint64",
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "LatestVersion",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Messages",
+          "required": false,
+          "type": "integer",
+          "format": "uint64",
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "RuntimeStats",
+          "required": false,
+          "type": "object",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Tags",
+          "required": false,
+          "type": "object",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": {
+            "type": "integer",
+            "format": "int64",
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "variants": null
+        },
+        {
+          "name": "Unread",
+          "required": false,
+          "type": "integer",
+          "format": "uint64",
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Version",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        }
+      ],
+      "values": []
+    },
+    {
+      "name": "Attachment",
+      "kind": "object",
+      "type": {
+        "type": "object",
+        "format": null,
+        "ref": null,
+        "nullable": false,
+        "items": null,
+        "mapValue": null,
+        "variants": null
+      },
+      "properties": [
+        {
+          "name": "Checksums",
+          "required": false,
+          "type": "object",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "ContentID",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "ContentType",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "FileName",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "PartID",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Size",
+          "required": false,
+          "type": "integer",
+          "format": "uint64",
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        }
+      ],
+      "values": []
+    },
+    {
+      "name": "ChaosTrigger",
+      "kind": "object",
+      "type": {
+        "type": "object",
+        "format": null,
+        "ref": null,
+        "nullable": false,
+        "items": null,
+        "mapValue": null,
+        "variants": null
+      },
+      "properties": [
+        {
+          "name": "ErrorCode",
+          "required": true,
+          "type": "integer",
+          "format": "int64",
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Probability",
+          "required": true,
+          "type": "integer",
+          "format": "int64",
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        }
+      ],
+      "values": []
+    },
+    {
+      "name": "ChaosTriggers",
+      "kind": "object",
+      "type": {
+        "type": "object",
+        "format": null,
+        "ref": null,
+        "nullable": false,
+        "items": null,
+        "mapValue": null,
+        "variants": null
+      },
+      "properties": [
+        {
+          "name": "Authentication",
+          "required": false,
+          "type": "ref",
+          "format": null,
+          "ref": "ChaosTrigger",
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Recipient",
+          "required": false,
+          "type": "ref",
+          "format": null,
+          "ref": "ChaosTrigger",
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Sender",
+          "required": false,
+          "type": "ref",
+          "format": null,
+          "ref": "ChaosTrigger",
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        }
+      ],
+      "values": []
+    },
+    {
+      "name": "HTMLCheckResponse",
+      "kind": "object",
+      "type": {
+        "type": "object",
+        "format": null,
+        "ref": null,
+        "nullable": false,
+        "items": null,
+        "mapValue": null,
+        "variants": null
+      },
+      "properties": [
+        {
+          "name": "Platforms",
+          "required": false,
+          "type": "object",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": {
+            "type": "array",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": {
+              "type": "string",
+              "format": null,
+              "ref": null,
+              "nullable": false,
+              "items": null,
+              "mapValue": null,
+              "variants": null
+            },
+            "mapValue": null,
+            "variants": null
+          },
+          "variants": null
+        },
+        {
+          "name": "Total",
+          "required": false,
+          "type": "ref",
+          "format": null,
+          "ref": "HTMLCheckTotal",
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Warnings",
+          "required": false,
+          "type": "array",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": {
+            "type": "ref",
+            "format": null,
+            "ref": "HTMLCheckWarning",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "mapValue": null,
+          "variants": null
+        }
+      ],
+      "values": []
+    },
+    {
+      "name": "HTMLCheckResult",
+      "kind": "object",
+      "type": {
+        "type": "object",
+        "format": null,
+        "ref": null,
+        "nullable": false,
+        "items": null,
+        "mapValue": null,
+        "variants": null
+      },
+      "properties": [
+        {
+          "name": "Family",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "NoteNumber",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Platform",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Support",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Version",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        }
+      ],
+      "values": []
+    },
+    {
+      "name": "HTMLCheckScore",
+      "kind": "object",
+      "type": {
+        "type": "object",
+        "format": null,
+        "ref": null,
+        "nullable": false,
+        "items": null,
+        "mapValue": null,
+        "variants": null
+      },
+      "properties": [
+        {
+          "name": "Found",
+          "required": false,
+          "type": "integer",
+          "format": "int64",
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Partial",
+          "required": false,
+          "type": "number",
+          "format": "float",
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Supported",
+          "required": false,
+          "type": "number",
+          "format": "float",
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Unsupported",
+          "required": false,
+          "type": "number",
+          "format": "float",
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        }
+      ],
+      "values": []
+    },
+    {
+      "name": "HTMLCheckTotal",
+      "kind": "object",
+      "type": {
+        "type": "object",
+        "format": null,
+        "ref": null,
+        "nullable": false,
+        "items": null,
+        "mapValue": null,
+        "variants": null
+      },
+      "properties": [
+        {
+          "name": "Nodes",
+          "required": false,
+          "type": "integer",
+          "format": "int64",
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Partial",
+          "required": false,
+          "type": "number",
+          "format": "float",
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Supported",
+          "required": false,
+          "type": "number",
+          "format": "float",
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Tests",
+          "required": false,
+          "type": "integer",
+          "format": "int64",
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Unsupported",
+          "required": false,
+          "type": "number",
+          "format": "float",
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        }
+      ],
+      "values": []
+    },
+    {
+      "name": "HTMLCheckWarning",
+      "kind": "object",
+      "type": {
+        "type": "object",
+        "format": null,
+        "ref": null,
+        "nullable": false,
+        "items": null,
+        "mapValue": null,
+        "variants": null
+      },
+      "properties": [
+        {
+          "name": "Category",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Keywords",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "NotesByNumber",
+          "required": false,
+          "type": "object",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "variants": null
+        },
+        {
+          "name": "Results",
+          "required": false,
+          "type": "array",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": {
+            "type": "ref",
+            "format": null,
+            "ref": "HTMLCheckResult",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Score",
+          "required": false,
+          "type": "ref",
+          "format": null,
+          "ref": "HTMLCheckScore",
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Slug",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Tags",
+          "required": false,
+          "type": "array",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Title",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "URL",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        }
+      ],
+      "values": []
+    },
+    {
+      "name": "Link",
+      "kind": "object",
+      "type": {
+        "type": "object",
+        "format": null,
+        "ref": null,
+        "nullable": false,
+        "items": null,
+        "mapValue": null,
+        "variants": null
+      },
+      "properties": [
+        {
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "StatusCode",
+          "required": false,
+          "type": "integer",
+          "format": "int64",
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "URL",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        }
+      ],
+      "values": []
+    },
+    {
+      "name": "LinkCheckResponse",
+      "kind": "object",
+      "type": {
+        "type": "object",
+        "format": null,
+        "ref": null,
+        "nullable": false,
+        "items": null,
+        "mapValue": null,
+        "variants": null
+      },
+      "properties": [
+        {
+          "name": "Errors",
+          "required": false,
+          "type": "integer",
+          "format": "int64",
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Links",
+          "required": false,
+          "type": "array",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": {
+            "type": "ref",
+            "format": null,
+            "ref": "Link",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "mapValue": null,
+          "variants": null
+        }
+      ],
+      "values": []
+    },
+    {
+      "name": "ListUnsubscribe",
+      "kind": "object",
+      "type": {
+        "type": "object",
+        "format": null,
+        "ref": null,
+        "nullable": false,
+        "items": null,
+        "mapValue": null,
+        "variants": null
+      },
+      "properties": [
+        {
+          "name": "Errors",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Header",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "HeaderPost",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Links",
+          "required": false,
+          "type": "array",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "mapValue": null,
+          "variants": null
+        }
+      ],
+      "values": []
+    },
+    {
+      "name": "Message",
+      "kind": "object",
+      "type": {
+        "type": "object",
+        "format": null,
+        "ref": null,
+        "nullable": false,
+        "items": null,
+        "mapValue": null,
+        "variants": null
+      },
+      "properties": [
+        {
+          "name": "Attachments",
+          "required": false,
+          "type": "array",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": {
+            "type": "ref",
+            "format": null,
+            "ref": "Attachment",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Bcc",
+          "required": false,
+          "type": "array",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": {
+            "type": "ref",
+            "format": null,
+            "ref": "Address",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Cc",
+          "required": false,
+          "type": "array",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": {
+            "type": "ref",
+            "format": null,
+            "ref": "Address",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Date",
+          "required": false,
+          "type": "string",
+          "format": "date-time",
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "From",
+          "required": false,
+          "type": "ref",
+          "format": null,
+          "ref": "Address",
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "HTML",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "ID",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Inline",
+          "required": false,
+          "type": "array",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": {
+            "type": "ref",
+            "format": null,
+            "ref": "Attachment",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "ListUnsubscribe",
+          "required": false,
+          "type": "ref",
+          "format": null,
+          "ref": "ListUnsubscribe",
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "MessageID",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "ReplyTo",
+          "required": false,
+          "type": "array",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": {
+            "type": "ref",
+            "format": null,
+            "ref": "Address",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "ReturnPath",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Size",
+          "required": false,
+          "type": "integer",
+          "format": "uint64",
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Subject",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Tags",
+          "required": false,
+          "type": "array",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Text",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "To",
+          "required": false,
+          "type": "array",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": {
+            "type": "ref",
+            "format": null,
+            "ref": "Address",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Username",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        }
+      ],
+      "values": []
+    },
+    {
+      "name": "MessagesSummary",
+      "kind": "object",
+      "type": {
+        "type": "object",
+        "format": null,
+        "ref": null,
+        "nullable": false,
+        "items": null,
+        "mapValue": null,
+        "variants": null
+      },
+      "properties": [
+        {
+          "name": "messages",
+          "required": false,
+          "type": "array",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": {
+            "type": "ref",
+            "format": null,
+            "ref": "MessageSummary",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "messages_count",
+          "required": false,
+          "type": "integer",
+          "format": "uint64",
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "messages_unread",
+          "required": false,
+          "type": "integer",
+          "format": "uint64",
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "start",
+          "required": false,
+          "type": "integer",
+          "format": "int64",
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "tags",
+          "required": false,
+          "type": "array",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "total",
+          "required": false,
+          "type": "integer",
+          "format": "uint64",
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "unread",
+          "required": false,
+          "type": "integer",
+          "format": "uint64",
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        }
+      ],
+      "values": []
+    },
+    {
+      "name": "MessageSummary",
+      "kind": "object",
+      "type": {
+        "type": "object",
+        "format": null,
+        "ref": null,
+        "nullable": false,
+        "items": null,
+        "mapValue": null,
+        "variants": null
+      },
+      "properties": [
+        {
+          "name": "Attachments",
+          "required": false,
+          "type": "integer",
+          "format": "int64",
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Bcc",
+          "required": false,
+          "type": "array",
+          "format": null,
+          "ref": null,
+          "nullable": true,
+          "items": {
+            "type": "ref",
+            "format": null,
+            "ref": "Address",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Cc",
+          "required": false,
+          "type": "array",
+          "format": null,
+          "ref": null,
+          "nullable": true,
+          "items": {
+            "type": "ref",
+            "format": null,
+            "ref": "Address",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Created",
+          "required": false,
+          "type": "string",
+          "format": "date-time",
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "From",
+          "required": false,
+          "type": "ref",
+          "format": null,
+          "ref": "Address",
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "ID",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "MessageID",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Read",
+          "required": false,
+          "type": "boolean",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "ReplyTo",
+          "required": false,
+          "type": "array",
+          "format": null,
+          "ref": null,
+          "nullable": true,
+          "items": {
+            "type": "ref",
+            "format": null,
+            "ref": "Address",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Size",
+          "required": false,
+          "type": "integer",
+          "format": "uint64",
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Snippet",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Subject",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Tags",
+          "required": false,
+          "type": "array",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": {
+            "type": "string",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "To",
+          "required": false,
+          "type": "array",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": {
+            "type": "ref",
+            "format": null,
+            "ref": "Address",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Username",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        }
+      ],
+      "values": []
+    },
+    {
+      "name": "Rule",
+      "kind": "object",
+      "type": {
+        "type": "object",
+        "format": null,
+        "ref": null,
+        "nullable": false,
+        "items": null,
+        "mapValue": null,
+        "variants": null
+      },
+      "properties": [
+        {
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Score",
+          "required": false,
+          "type": "number",
+          "format": "double",
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        }
+      ],
+      "values": []
+    },
+    {
+      "name": "SendMessageResult",
+      "kind": "object",
+      "type": {
+        "type": "object",
+        "format": null,
+        "ref": null,
+        "nullable": false,
+        "items": null,
+        "mapValue": null,
+        "variants": null
+      },
+      "properties": [
+        {
+          "name": "ID",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        }
+      ],
+      "values": []
+    },
+    {
+      "name": "SpamAssassinResponse",
+      "kind": "object",
+      "type": {
+        "type": "object",
+        "format": null,
+        "ref": null,
+        "nullable": false,
+        "items": null,
+        "mapValue": null,
+        "variants": null
+      },
+      "properties": [
+        {
+          "name": "Error",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "IsSpam",
+          "required": false,
+          "type": "boolean",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Rules",
+          "required": false,
+          "type": "array",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": {
+            "type": "ref",
+            "format": null,
+            "ref": "Rule",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Score",
+          "required": false,
+          "type": "number",
+          "format": "double",
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        }
+      ],
+      "values": []
+    },
+    {
+      "name": "WebUIConfiguration",
+      "kind": "object",
+      "type": {
+        "type": "object",
+        "format": null,
+        "ref": null,
+        "nullable": false,
+        "items": null,
+        "mapValue": null,
+        "variants": null
+      },
+      "properties": [
+        {
+          "name": "ChaosEnabled",
+          "required": false,
+          "type": "boolean",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "DuplicatesIgnored",
+          "required": false,
+          "type": "boolean",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "HideDeleteAllButton",
+          "required": false,
+          "type": "boolean",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "Label",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "MessageRelay",
+          "required": false,
+          "type": "object",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "SpamAssassin",
+          "required": false,
+          "type": "boolean",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        }
+      ],
+      "values": []
+    }
+  ],
+  "transport": {
+    "engine": "fetch",
+    "implementation": "Fetch API"
+  },
+  "license": {
+    "identifier": "MIT",
+    "copyrightHolder": "SDK Authors",
+    "bundlesFullText": true
+  },
+  "versionFormat": {
+    "policy": "semver",
+    "normalizedVersion": "1.0.0"
+  },
+  "execution": {
+    "form": "native-async",
+    "mechanism": "promise",
+    "unconditional": true,
+    "syncCompanion": false
+  },
+  "documentation": {
+    "depth": "full",
+    "operations": [
+      {
+        "id": "AppInformation",
+        "method": "get",
+        "path": "/api/v1/info",
+        "summary": "Returns basic runtime information, message totals and latest release version.",
+        "description": "Returns basic runtime information, message totals and latest release version.",
+        "deprecated": false,
+        "deprecationMessage": null,
+        "parameters": []
+      },
+      {
+        "id": "AttachmentParams",
+        "method": "get",
+        "path": "/api/v1/message/{ID}/part/{PartID}",
+        "summary": "This will return the attachment part using the appropriate Content-Type. The ID can be set to `latest` to reference the latest message.",
+        "description": "This will return the attachment part using the appropriate Content-Type. The ID can be set to `latest` to reference the latest message.",
+        "deprecated": false,
+        "deprecationMessage": null,
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "required": true,
+            "description": "Message database ID or \"latest\""
+          },
+          {
+            "name": "PartID",
+            "in": "path",
+            "required": true,
+            "description": "Attachment part ID"
+          }
+        ]
+      },
+      {
+        "id": "DeleteMessagesParams",
+        "method": "delete",
+        "path": "/api/v1/messages",
+        "summary": "Delete individual or all messages. If no IDs are provided then all messages are deleted.",
+        "description": "Delete individual or all messages. If no IDs are provided then all messages are deleted.",
+        "deprecated": false,
+        "deprecationMessage": null,
+        "parameters": []
+      },
+      {
+        "id": "DeleteSearchParams",
+        "method": "delete",
+        "path": "/api/v1/search",
+        "summary": "Delete all messages matching [a search](https://mailpit.axllent.org/docs/usage/search-filters/).",
+        "description": "Delete all messages matching [a search](https://mailpit.axllent.org/docs/usage/search-filters/).",
+        "deprecated": false,
+        "deprecationMessage": null,
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "required": true,
+            "description": "Search query"
+          },
+          {
+            "name": "tz",
+            "in": "query",
+            "required": false,
+            "description": "[Timezone identifier](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) used only for `before:` & `after:` searches (eg: \"Pacific/Auckland\")."
+          }
+        ]
+      },
+      {
+        "id": "DeleteTagParams",
+        "method": "delete",
+        "path": "/api/v1/tags/{Tag}",
+        "summary": "Deletes a tag. This will not delete any messages with the tag, but will remove the tag from any messages containing the tag.",
+        "description": "Deletes a tag. This will not delete any messages with the tag, but will remove the tag from any messages containing the tag.",
+        "deprecated": false,
+        "deprecationMessage": null,
+        "parameters": [
+          {
+            "name": "Tag",
+            "in": "path",
+            "required": true,
+            "description": "The url-encoded tag name to delete"
+          }
+        ]
+      },
+      {
+        "id": "DownloadRawParams",
+        "method": "get",
+        "path": "/api/v1/message/{ID}/raw",
+        "summary": "Returns the full email source as plain text. The ID can be set to `latest` to return the latest message source.",
+        "description": "Returns the full email source as plain text. The ID can be set to `latest` to return the latest message source.",
+        "deprecated": false,
+        "deprecationMessage": null,
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "required": true,
+            "description": "Message database ID or \"latest\""
+          }
+        ]
+      },
+      {
+        "id": "GetAllTags",
+        "method": "get",
+        "path": "/api/v1/tags",
+        "summary": "Lists all unique tags currently associated with messages. Use the returned values to retrieve the set of existing message tags. The response is a JSON array of strings.",
+        "description": "Returns a JSON array of all unique message tags.",
+        "deprecated": false,
+        "deprecationMessage": null,
+        "parameters": []
+      },
+      {
+        "id": "getChaos",
+        "method": "get",
+        "path": "/api/v1/chaos",
+        "summary": "Returns the current Chaos triggers configuration. This API route will return an error if Chaos is not enabled at runtime.",
+        "description": "Returns the current Chaos triggers configuration. This API route will return an error if Chaos is not enabled at runtime.",
+        "deprecated": false,
+        "deprecationMessage": null,
+        "parameters": []
+      },
+      {
+        "id": "GetHeadersParams",
+        "method": "get",
+        "path": "/api/v1/message/{ID}/headers",
+        "summary": "Returns the message headers as an array. Note that header keys are returned alphabetically. The ID can be set to `latest` to return the latest message headers.",
+        "description": "Returns the message headers as an array. Note that header keys are returned alphabetically. The ID can be set to `latest` to return the latest message headers.",
+        "deprecated": false,
+        "deprecationMessage": null,
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "required": true,
+            "description": "Message database ID or \"latest\""
+          }
+        ]
+      },
+      {
+        "id": "GetMessageHTMLParams",
+        "method": "get",
+        "path": "/view/{ID}.html",
+        "summary": "Renders just the message's HTML part which can be used for UI integration testing. Attached inline images are modified to link to the API provided they exist. Note that is the message does not contain a HTML part then an 404 error is returned. The ID can be set to `latest` to return the latest message.",
+        "description": "Renders just the message's HTML part which can be used for UI integration testing. Attached inline images are modified to link to the API provided they exist. Note that is the message does not contain a HTML part then an 404 error is returned. The ID can be set to `latest` to return the latest message.",
+        "deprecated": false,
+        "deprecationMessage": null,
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "required": true,
+            "description": "Message database ID or \"latest\""
+          },
+          {
+            "name": "embed",
+            "in": "query",
+            "required": false,
+            "description": "If this is route is to be embedded in an iframe, set embed to `1` in the URL to add `target=\"_blank\"` and `rel=\"noreferrer noopener\"` to all links. In addition, a small script will be added to the end of the document to post (postMessage()) the height of the document back to the parent window for optional iframe height resizing. Note that this will also *transform* the message into a full HTML document (if it isn't already), so this option is useful for viewing but not programmatic testing."
+          }
+        ]
+      },
+      {
+        "id": "GetMessageParams",
+        "method": "get",
+        "path": "/api/v1/message/{ID}",
+        "summary": "Returns the summary of a message, marking the message as read. The ID can be set to `latest` to return the latest message.",
+        "description": "Returns the summary of a message, marking the message as read. The ID can be set to `latest` to return the latest message.",
+        "deprecated": false,
+        "deprecationMessage": null,
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "required": true,
+            "description": "Message database ID or \"latest\""
+          }
+        ]
+      },
+      {
+        "id": "GetMessagesParams",
+        "method": "get",
+        "path": "/api/v1/messages",
+        "summary": "Returns messages from the mailbox ordered from newest to oldest.",
+        "description": "Returns messages from the mailbox ordered from newest to oldest.",
+        "deprecated": false,
+        "deprecationMessage": null,
+        "parameters": [
+          {
+            "name": "start",
+            "in": "query",
+            "required": false,
+            "description": "Pagination offset"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "description": "Limit number of results"
+          }
+        ]
+      },
+      {
+        "id": "GetMessageTextParams",
+        "method": "get",
+        "path": "/view/{ID}.txt",
+        "summary": "Renders just the message's text part which can be used for UI integration testing. The ID can be set to `latest` to return the latest message.",
+        "description": "Renders just the message's text part which can be used for UI integration testing. The ID can be set to `latest` to return the latest message.",
+        "deprecated": false,
+        "deprecationMessage": null,
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "required": true,
+            "description": "Message database ID or \"latest\""
+          }
+        ]
+      },
+      {
+        "id": "HTMLCheckParams",
+        "method": "get",
+        "path": "/api/v1/message/{ID}/html-check",
+        "summary": "Returns the summary of the message HTML checker. The ID can be set to `latest` to return the latest message.",
+        "description": "Returns the summary of the message HTML checker. The ID can be set to `latest` to return the latest message.",
+        "deprecated": false,
+        "deprecationMessage": null,
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "required": true,
+            "description": "Message database ID or \"latest\""
+          }
+        ]
+      },
+      {
+        "id": "LinkCheckParams",
+        "method": "get",
+        "path": "/api/v1/message/{ID}/link-check",
+        "summary": "Returns the summary of the message Link checker. The ID can be set to `latest` to return the latest message.",
+        "description": "Returns the summary of the message Link checker. The ID can be set to `latest` to return the latest message.",
+        "deprecated": false,
+        "deprecationMessage": null,
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "required": true,
+            "description": "Message database ID or \"latest\""
+          },
+          {
+            "name": "follow",
+            "in": "query",
+            "required": false,
+            "description": "Follow redirects"
+          }
+        ]
+      },
+      {
+        "id": "ReleaseMessageParams",
+        "method": "post",
+        "path": "/api/v1/message/{ID}/release",
+        "summary": "Release a message via a pre-configured external SMTP server. This is only enabled if message relaying has been configured. The ID can be set to `latest` to reference the latest message.",
+        "description": "Release a message via a pre-configured external SMTP server. This is only enabled if message relaying has been configured. The ID can be set to `latest` to reference the latest message.",
+        "deprecated": false,
+        "deprecationMessage": null,
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "required": true,
+            "description": "Message database ID"
+          }
+        ]
+      },
+      {
+        "id": "RenameTagParams",
+        "method": "put",
+        "path": "/api/v1/tags/{Tag}",
+        "summary": "Renames an existing tag using its current URL-encoded name. Send the new tag name in `Name`; the request body is optional, but the body schema requires `Name` when you provide a body.",
+        "description": "Renames an existing tag.",
+        "deprecated": false,
+        "deprecationMessage": null,
+        "parameters": [
+          {
+            "name": "Tag",
+            "in": "path",
+            "required": true,
+            "description": "The url-encoded tag name to rename"
+          }
+        ]
+      },
+      {
+        "id": "SearchParams",
+        "method": "get",
+        "path": "/api/v1/search",
+        "summary": "Returns messages matching [a search](https://mailpit.axllent.org/docs/usage/search-filters/), sorted by received date (descending).",
+        "description": "Returns messages matching [a search](https://mailpit.axllent.org/docs/usage/search-filters/), sorted by received date (descending).",
+        "deprecated": false,
+        "deprecationMessage": null,
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "required": true,
+            "description": "Search query"
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "required": false,
+            "description": "Pagination offset"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "description": "Limit results"
+          },
+          {
+            "name": "tz",
+            "in": "query",
+            "required": false,
+            "description": "Optional [timezone identifier](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) used only for `before:` & `after:` searches (eg: \"Pacific/Auckland\")."
+          }
+        ]
+      },
+      {
+        "id": "SendMessageParams",
+        "method": "post",
+        "path": "/api/v1/send",
+        "summary": "Sends a message through the HTTP API using the supplied sender, recipients, content, and optional delivery metadata. Provide `From` with an `Email` address; add recipients, message bodies, attachments, headers, or tags as needed. A 200 response returns the message ID.",
+        "description": "Send a message via the HTTP API.",
+        "deprecated": false,
+        "deprecationMessage": null,
+        "parameters": []
+      },
+      {
+        "id": "setChaosParams",
+        "method": "put",
+        "path": "/api/v1/chaos",
+        "summary": "Set the Chaos triggers configuration and return the updated values. This API route will return an error if Chaos is not enabled at runtime. If any triggers are omitted from the request, then those are reset to their default values with a 0% probability (ie: disabled). Setting a blank `{}` will reset all triggers to their default values.",
+        "description": "Set the Chaos triggers configuration and return the updated values. This API route will return an error if Chaos is not enabled at runtime. If any triggers are omitted from the request, then those are reset to their default values with a 0% probability (ie: disabled). Setting a blank `{}` will reset all triggers to their default values.",
+        "deprecated": false,
+        "deprecationMessage": null,
+        "parameters": []
+      },
+      {
+        "id": "SetReadStatusParams",
+        "method": "put",
+        "path": "/api/v1/messages",
+        "summary": "You can optionally provide an array of IDs or a search string. If neither IDs nor search is provided then all mailbox messages are updated.",
+        "description": "You can optionally provide an array of IDs or a search string. If neither IDs nor search is provided then all mailbox messages are updated.",
+        "deprecated": false,
+        "deprecationMessage": null,
+        "parameters": [
+          {
+            "name": "tz",
+            "in": "query",
+            "required": false,
+            "description": "Optional [timezone identifier](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) used only for `before:` & `after:` searches (eg: \"Pacific/Auckland\")."
+          }
+        ]
+      },
+      {
+        "id": "SetTagsParams",
+        "method": "put",
+        "path": "/api/v1/tags",
+        "summary": "This will overwrite any existing tags for selected message database IDs. To remove all tags from a message, pass an empty tags array.",
+        "description": "This will overwrite any existing tags for selected message database IDs. To remove all tags from a message, pass an empty tags array.",
+        "deprecated": false,
+        "deprecationMessage": null,
+        "parameters": []
+      },
+      {
+        "id": "SpamAssassinCheckParams",
+        "method": "get",
+        "path": "/api/v1/message/{ID}/sa-check",
+        "summary": "Returns the SpamAssassin summary (if enabled) of the message. The ID can be set to `latest` to return the latest message.",
+        "description": "Returns the SpamAssassin summary (if enabled) of the message. The ID can be set to `latest` to return the latest message.",
+        "deprecated": false,
+        "deprecationMessage": null,
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "required": true,
+            "description": "Message database ID or \"latest\""
+          }
+        ]
+      },
+      {
+        "id": "ThumbnailParams",
+        "method": "get",
+        "path": "/api/v1/message/{ID}/part/{PartID}/thumb",
+        "summary": "This will return a cropped 180x120 JPEG thumbnail of an image attachment. If the image is smaller than 180x120 then the image is padded. If the attachment is not an image then a blank image is returned. The ID can be set to `latest` to return the latest message.",
+        "description": "This will return a cropped 180x120 JPEG thumbnail of an image attachment. If the image is smaller than 180x120 then the image is padded. If the attachment is not an image then a blank image is returned. The ID can be set to `latest` to return the latest message.",
+        "deprecated": false,
+        "deprecationMessage": null,
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "required": true,
+            "description": "Message database ID or \"latest\""
+          },
+          {
+            "name": "PartID",
+            "in": "path",
+            "required": true,
+            "description": "Attachment part ID"
+          }
+        ]
+      },
+      {
+        "id": "WebUIConfigurationResponse",
+        "method": "get",
+        "path": "/api/v1/webui",
+        "summary": "Returns configuration settings for the web UI. Intended for web UI only!",
+        "description": "Returns configuration settings for the web UI. Intended for web UI only!",
+        "deprecated": false,
+        "deprecationMessage": null,
+        "parameters": []
+      }
+    ],
+    "models": [
+      {
+        "name": "Address",
+        "kind": "model",
+        "description": "An address such as \"Barry Gibbs <bg@example.com>\" is represented as Address{Name: \"Barry Gibbs\", Address: \"bg@example.com\"}.",
+        "values": [],
+        "properties": [
+          {
+            "name": "Address",
+            "description": "Optional `string` value serialized in the `Address` wire field."
+          },
+          {
+            "name": "Name",
+            "description": "Optional `string` value serialized in the `Name` wire field."
+          }
+        ]
+      },
+      {
+        "name": "AppInformation",
+        "kind": "model",
+        "description": "AppInformation struct",
+        "values": [],
+        "properties": [
+          {
+            "name": "Database",
+            "description": "Database path"
+          },
+          {
+            "name": "DatabaseSize",
+            "description": "Database size in bytes"
+          },
+          {
+            "name": "LatestVersion",
+            "description": "Latest Mailpit version"
+          },
+          {
+            "name": "Messages",
+            "description": "Total number of messages in the database"
+          },
+          {
+            "name": "RuntimeStats",
+            "description": "Runtime statistics"
+          },
+          {
+            "name": "Tags",
+            "description": "Tags and message totals per tag"
+          },
+          {
+            "name": "Unread",
+            "description": "Total number of messages in the database"
+          },
+          {
+            "name": "Version",
+            "description": "Current Mailpit version"
+          }
+        ]
+      },
+      {
+        "name": "Attachment",
+        "kind": "model",
+        "description": "Attachment struct for inline images and attachments",
+        "values": [],
+        "properties": [
+          {
+            "name": "Checksums",
+            "description": "File checksums"
+          },
+          {
+            "name": "ContentID",
+            "description": "Content ID"
+          },
+          {
+            "name": "ContentType",
+            "description": "Content type"
+          },
+          {
+            "name": "FileName",
+            "description": "File name"
+          },
+          {
+            "name": "PartID",
+            "description": "Attachment part ID"
+          },
+          {
+            "name": "Size",
+            "description": "Size in bytes"
+          }
+        ]
+      },
+      {
+        "name": "ChaosTrigger",
+        "kind": "model",
+        "description": "Trigger for Chaos",
+        "values": [],
+        "properties": [
+          {
+            "name": "ErrorCode",
+            "description": "SMTP error code to return. The value must range from 400 to 599."
+          },
+          {
+            "name": "Probability",
+            "description": "Probability (chance) of triggering the error. The value must range from 0 to 100."
+          }
+        ]
+      },
+      {
+        "name": "ChaosTriggers",
+        "kind": "model",
+        "description": "Triggers for the Chaos configuration",
+        "values": [],
+        "properties": [
+          {
+            "name": "Authentication",
+            "description": "Trigger for Chaos"
+          },
+          {
+            "name": "Recipient",
+            "description": "Trigger for Chaos"
+          },
+          {
+            "name": "Sender",
+            "description": "Trigger for Chaos"
+          }
+        ]
+      },
+      {
+        "name": "HTMLCheckResponse",
+        "kind": "model",
+        "description": "Response represents the HTML check response struct",
+        "values": [],
+        "properties": [
+          {
+            "name": "Platforms",
+            "description": "All platforms tested, mainly for the web UI"
+          },
+          {
+            "name": "Total",
+            "description": "Total weighted result for all scores"
+          },
+          {
+            "name": "Warnings",
+            "description": "List of warnings from tests"
+          }
+        ]
+      },
+      {
+        "name": "HTMLCheckResult",
+        "kind": "model",
+        "description": "Result struct",
+        "values": [],
+        "properties": [
+          {
+            "name": "Family",
+            "description": "Family eg: Outlook, Mozilla Thunderbird"
+          },
+          {
+            "name": "Name",
+            "description": "Friendly name of result, combining family, platform & version"
+          },
+          {
+            "name": "NoteNumber",
+            "description": "Note number for partially supported if applicable"
+          },
+          {
+            "name": "Platform",
+            "description": "Platform eg: ios, android, windows"
+          },
+          {
+            "name": "Support",
+            "description": "Support [yes, no, partial]"
+          },
+          {
+            "name": "Version",
+            "description": "Family version eg: 4.7.1, 2019-10, 10.3"
+          }
+        ]
+      },
+      {
+        "name": "HTMLCheckScore",
+        "kind": "model",
+        "description": "Score struct",
+        "values": [],
+        "properties": [
+          {
+            "name": "Found",
+            "description": "Number of matches in the document"
+          },
+          {
+            "name": "Partial",
+            "description": "Total percentage partially supported"
+          },
+          {
+            "name": "Supported",
+            "description": "Total percentage supported"
+          },
+          {
+            "name": "Unsupported",
+            "description": "Total percentage unsupported"
+          }
+        ]
+      },
+      {
+        "name": "HTMLCheckTotal",
+        "kind": "model",
+        "description": "Total weighted result for all scores",
+        "values": [],
+        "properties": [
+          {
+            "name": "Nodes",
+            "description": "Total number of HTML nodes detected in message"
+          },
+          {
+            "name": "Partial",
+            "description": "Overall percentage partially supported"
+          },
+          {
+            "name": "Supported",
+            "description": "Overall percentage supported"
+          },
+          {
+            "name": "Tests",
+            "description": "Total number of tests done"
+          },
+          {
+            "name": "Unsupported",
+            "description": "Overall percentage unsupported"
+          }
+        ]
+      },
+      {
+        "name": "HTMLCheckWarning",
+        "kind": "model",
+        "description": "Warning represents a failed test",
+        "values": [],
+        "properties": [
+          {
+            "name": "Category",
+            "description": "Category [css, html]"
+          },
+          {
+            "name": "Description",
+            "description": "Description"
+          },
+          {
+            "name": "Keywords",
+            "description": "Keywords"
+          },
+          {
+            "name": "NotesByNumber",
+            "description": "Notes based on results"
+          },
+          {
+            "name": "Results",
+            "description": "Test results"
+          },
+          {
+            "name": "Score",
+            "description": "Score struct"
+          },
+          {
+            "name": "Slug",
+            "description": "Slug identifier"
+          },
+          {
+            "name": "Tags",
+            "description": "Tags"
+          },
+          {
+            "name": "Title",
+            "description": "Friendly title"
+          },
+          {
+            "name": "URL",
+            "description": "URL to caniemail.com"
+          }
+        ]
+      },
+      {
+        "name": "Link",
+        "kind": "model",
+        "description": "Link struct",
+        "values": [],
+        "properties": [
+          {
+            "name": "Status",
+            "description": "HTTP status definition"
+          },
+          {
+            "name": "StatusCode",
+            "description": "HTTP status code"
+          },
+          {
+            "name": "URL",
+            "description": "Link URL"
+          }
+        ]
+      },
+      {
+        "name": "LinkCheckResponse",
+        "kind": "model",
+        "description": "Response represents the Link check response",
+        "values": [],
+        "properties": [
+          {
+            "name": "Errors",
+            "description": "Total number of errors"
+          },
+          {
+            "name": "Links",
+            "description": "Tested links"
+          }
+        ]
+      },
+      {
+        "name": "ListUnsubscribe",
+        "kind": "model",
+        "description": "ListUnsubscribe contains a summary of List-Unsubscribe & List-Unsubscribe-Post headers including validation of the link structure",
+        "values": [],
+        "properties": [
+          {
+            "name": "Errors",
+            "description": "Validation errors (if any)"
+          },
+          {
+            "name": "Header",
+            "description": "List-Unsubscribe header value"
+          },
+          {
+            "name": "HeaderPost",
+            "description": "List-Unsubscribe-Post value (if set)"
+          },
+          {
+            "name": "Links",
+            "description": "Detected links, maximum one email and one HTTP(S) link"
+          }
+        ]
+      },
+      {
+        "name": "Message",
+        "kind": "model",
+        "description": "Message data excluding physical attachments",
+        "values": [],
+        "properties": [
+          {
+            "name": "Attachments",
+            "description": "Message attachments"
+          },
+          {
+            "name": "Bcc",
+            "description": "Bcc addresses"
+          },
+          {
+            "name": "Cc",
+            "description": "Cc addresses"
+          },
+          {
+            "name": "Date",
+            "description": "Message RFC3339Nano date & time (if set), else date & time received ([extended RFC3339](https://tools.ietf.org/html/rfc3339#section-5.6) format with optional nano seconds)"
+          },
+          {
+            "name": "From",
+            "description": "An address such as \"Barry Gibbs <bg@example.com>\" is represented as Address{Name: \"Barry Gibbs\", Address: \"bg@example.com\"}."
+          },
+          {
+            "name": "HTML",
+            "description": "Message body HTML"
+          },
+          {
+            "name": "ID",
+            "description": "Database ID"
+          },
+          {
+            "name": "Inline",
+            "description": "Inline message attachments"
+          },
+          {
+            "name": "ListUnsubscribe",
+            "description": "ListUnsubscribe contains a summary of List-Unsubscribe & List-Unsubscribe-Post headers including validation of the link structure"
+          },
+          {
+            "name": "MessageID",
+            "description": "Message ID"
+          },
+          {
+            "name": "ReplyTo",
+            "description": "ReplyTo addresses"
+          },
+          {
+            "name": "ReturnPath",
+            "description": "Return-Path"
+          },
+          {
+            "name": "Size",
+            "description": "Message size in bytes"
+          },
+          {
+            "name": "Subject",
+            "description": "Message subject"
+          },
+          {
+            "name": "Tags",
+            "description": "Message tags"
+          },
+          {
+            "name": "Text",
+            "description": "Message body text"
+          },
+          {
+            "name": "To",
+            "description": "To addresses"
+          },
+          {
+            "name": "Username",
+            "description": "Username used for authentication (if provided) with the SMTP or Send API"
+          }
+        ]
+      },
+      {
+        "name": "MessagesSummary",
+        "kind": "model",
+        "description": "MessagesSummary is a summary of a list of messages",
+        "values": [],
+        "properties": [
+          {
+            "name": "messages",
+            "description": "Messages summary"
+          },
+          {
+            "name": "messages_count",
+            "description": "Total number of messages matching current query"
+          },
+          {
+            "name": "messages_unread",
+            "description": "Total number of unread messages matching current query"
+          },
+          {
+            "name": "start",
+            "description": "Pagination offset"
+          },
+          {
+            "name": "tags",
+            "description": "All current tags"
+          },
+          {
+            "name": "total",
+            "description": "Total number of messages in mailbox"
+          },
+          {
+            "name": "unread",
+            "description": "Total number of unread messages in mailbox"
+          }
+        ]
+      },
+      {
+        "name": "MessageSummary",
+        "kind": "model",
+        "description": "MessageSummary struct for frontend messages",
+        "values": [],
+        "properties": [
+          {
+            "name": "Attachments",
+            "description": "Whether the message has any attachments"
+          },
+          {
+            "name": "Bcc",
+            "description": "Bcc addresses"
+          },
+          {
+            "name": "Cc",
+            "description": "Cc addresses"
+          },
+          {
+            "name": "Created",
+            "description": "Received RFC3339Nano date & time ([extended RFC3339](https://tools.ietf.org/html/rfc3339#section-5.6) format with optional nano seconds)"
+          },
+          {
+            "name": "From",
+            "description": "An address such as \"Barry Gibbs <bg@example.com>\" is represented as Address{Name: \"Barry Gibbs\", Address: \"bg@example.com\"}."
+          },
+          {
+            "name": "ID",
+            "description": "Database ID"
+          },
+          {
+            "name": "MessageID",
+            "description": "Message ID"
+          },
+          {
+            "name": "Read",
+            "description": "Read status"
+          },
+          {
+            "name": "ReplyTo",
+            "description": "Reply-To address"
+          },
+          {
+            "name": "Size",
+            "description": "Message size in bytes (total)"
+          },
+          {
+            "name": "Snippet",
+            "description": "Message snippet includes up to 250 characters"
+          },
+          {
+            "name": "Subject",
+            "description": "Email subject"
+          },
+          {
+            "name": "Tags",
+            "description": "Message tags"
+          },
+          {
+            "name": "To",
+            "description": "To address"
+          },
+          {
+            "name": "Username",
+            "description": "Username used for authentication (if provided) with the SMTP or Send API"
+          }
+        ]
+      },
+      {
+        "name": "Rule",
+        "kind": "model",
+        "description": "Rule struct",
+        "values": [],
+        "properties": [
+          {
+            "name": "Description",
+            "description": "SpamAssassin rule description"
+          },
+          {
+            "name": "Name",
+            "description": "SpamAssassin rule name"
+          },
+          {
+            "name": "Score",
+            "description": "Spam rule score"
+          }
+        ]
+      },
+      {
+        "name": "SendMessageResult",
+        "kind": "model",
+        "description": "Typed representation of the `SendMessageResult` API schema.",
+        "values": [],
+        "properties": [
+          {
+            "name": "ID",
+            "description": "Database ID"
+          }
+        ]
+      },
+      {
+        "name": "SpamAssassinResponse",
+        "kind": "model",
+        "description": "Result is a SpamAssassin result",
+        "values": [],
+        "properties": [
+          {
+            "name": "Error",
+            "description": "If populated will return an error string"
+          },
+          {
+            "name": "IsSpam",
+            "description": "Whether the message is spam or not"
+          },
+          {
+            "name": "Rules",
+            "description": "Spam rules triggered"
+          },
+          {
+            "name": "Score",
+            "description": "Total spam score based on triggered rules"
+          }
+        ]
+      },
+      {
+        "name": "WebUIConfiguration",
+        "kind": "model",
+        "description": "Web UI configuration settings",
+        "values": [],
+        "properties": [
+          {
+            "name": "ChaosEnabled",
+            "description": "Whether Chaos support is enabled at runtime"
+          },
+          {
+            "name": "DuplicatesIgnored",
+            "description": "Whether messages with duplicate IDs are ignored"
+          },
+          {
+            "name": "HideDeleteAllButton",
+            "description": "Whether the delete button should be hidden"
+          },
+          {
+            "name": "Label",
+            "description": "Optional label to identify this Mailpit instance"
+          },
+          {
+            "name": "MessageRelay",
+            "description": "Message Relay information"
+          },
+          {
+            "name": "SpamAssassin",
+            "description": "Whether SpamAssassin is enabled"
+          }
+        ]
+      }
+    ]
+  }
+}

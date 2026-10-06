@@ -1,0 +1,2335 @@
+[
+  {
+    "operationId": "ThumbnailParams",
+    "summary": "This will return a cropped 180x120 JPEG thumbnail of an image attachment.\nIf the image is smaller than 180x120 then the image is padded. If the attachment is not an image then a blank image is returned.\n\nThe ID can be set to `latest` to return the latest message.",
+    "method": "GET",
+    "pathTemplate": "/api/v1/message/{ID}/part/{PartID}/thumb",
+    "regexSource": "^/api/v1/message/(?<sdkPath0>[^/]+)/part/(?<sdkPath1>[^/]+)/thumb$",
+    "pathParams": ["ID", "PartID"],
+    "pathParameters": [
+      {
+        "wireName": "ID",
+        "required": true,
+        "style": "simple",
+        "explode": false,
+        "allowReserved": false,
+        "isArray": false,
+        "jsonContent": false,
+        "shape": "scalar",
+        "members": [],
+        "example": "id-1",
+        "routeRepresentative": "sdk-route-1"
+      },
+      {
+        "wireName": "PartID",
+        "required": true,
+        "style": "simple",
+        "explode": false,
+        "allowReserved": false,
+        "isArray": false,
+        "jsonContent": false,
+        "shape": "scalar",
+        "members": [],
+        "example": "Part-1",
+        "routeRepresentative": "sdk-route-2"
+      }
+    ],
+    "queryParameters": [],
+    "literalQuery": [],
+    "headerParameters": [],
+    "cookieParameters": [],
+    "specificity": {
+      "staticSegments": 5,
+      "parameterSegments": 2,
+      "totalSegments": 7,
+      "staticCharacterCount": 21,
+      "constrainedParameters": 0,
+      "literalQueryParameters": 0
+    },
+    "originalIndex": 8,
+    "requestModes": [],
+    "responseModes": [
+      {
+        "statusCode": "200",
+        "mediaType": "image/jpeg",
+        "decoderKind": "bytes",
+        "example": null,
+        "bodyBase64": "WlhoaGJYQnNaUT09",
+        "exampleSource": "synthesized",
+        "authoredExampleSource": "none",
+        "hasAuthoredExample": false
+      }
+    ],
+    "defaultResponseIndex": 0,
+    "streamSelector": null,
+    "errorResponses": {
+      "400": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": "string",
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ]
+    }
+  },
+  {
+    "operationId": "HTMLCheckParams",
+    "summary": "Returns the summary of the message HTML checker.\n\nThe ID can be set to `latest` to return the latest message.",
+    "method": "GET",
+    "pathTemplate": "/api/v1/message/{ID}/html-check",
+    "regexSource": "^/api/v1/message/(?<sdkPath0>[^/]+)/html-check$",
+    "pathParams": ["ID"],
+    "pathParameters": [
+      {
+        "wireName": "ID",
+        "required": true,
+        "style": "simple",
+        "explode": false,
+        "allowReserved": false,
+        "isArray": false,
+        "jsonContent": false,
+        "shape": "scalar",
+        "members": [],
+        "example": "id-1",
+        "routeRepresentative": "sdk-route-1"
+      }
+    ],
+    "queryParameters": [],
+    "literalQuery": [],
+    "headerParameters": [],
+    "cookieParameters": [],
+    "specificity": {
+      "staticSegments": 4,
+      "parameterSegments": 1,
+      "totalSegments": 5,
+      "staticCharacterCount": 22,
+      "constrainedParameters": 0,
+      "literalQueryParameters": 0
+    },
+    "originalIndex": 5,
+    "requestModes": [],
+    "responseModes": [
+      {
+        "statusCode": "200",
+        "mediaType": "application/json",
+        "decoderKind": "json",
+        "example": {
+          "Platforms": {
+            "key": ["key"]
+          },
+          "Total": {
+            "Nodes": 1,
+            "Partial": 1,
+            "Supported": 1,
+            "Tests": 1,
+            "Unsupported": 1
+          },
+          "Warnings": [
+            {
+              "Category": "Category",
+              "Description": "example text",
+              "Keywords": "Keywords",
+              "NotesByNumber": {
+                "key": "key"
+              },
+              "Results": [
+                {
+                  "Family": "Family",
+                  "Name": "Example Name",
+                  "NoteNumber": "NoteNumber",
+                  "Platform": "Platform",
+                  "Support": "Support",
+                  "Version": "Version"
+                }
+              ],
+              "Score": {
+                "Found": 1,
+                "Partial": 1,
+                "Supported": 1,
+                "Unsupported": 1
+              },
+              "Slug": "Slug",
+              "Tags": ["Tags"],
+              "Title": "Title",
+              "URL": "https://example.com"
+            }
+          ]
+        },
+        "bodyBase64": null,
+        "exampleSource": "synthesized",
+        "authoredExampleSource": "none",
+        "hasAuthoredExample": false
+      }
+    ],
+    "defaultResponseIndex": 0,
+    "streamSelector": null,
+    "errorResponses": {
+      "400": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": "string",
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ],
+      "404": [
+        {
+          "statusCode": "404",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": "string",
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ]
+    }
+  },
+  {
+    "operationId": "LinkCheckParams",
+    "summary": "Returns the summary of the message Link checker.\n\nThe ID can be set to `latest` to return the latest message.",
+    "method": "GET",
+    "pathTemplate": "/api/v1/message/{ID}/link-check",
+    "regexSource": "^/api/v1/message/(?<sdkPath0>[^/]+)/link-check$",
+    "pathParams": ["ID"],
+    "pathParameters": [
+      {
+        "wireName": "ID",
+        "required": true,
+        "style": "simple",
+        "explode": false,
+        "allowReserved": false,
+        "isArray": false,
+        "jsonContent": false,
+        "shape": "scalar",
+        "members": [],
+        "example": "id-1",
+        "routeRepresentative": "sdk-route-1"
+      }
+    ],
+    "queryParameters": [
+      {
+        "wireName": "follow",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "allowReserved": false,
+        "isArray": false,
+        "jsonContent": false,
+        "shape": "scalar",
+        "members": [],
+        "example": "false"
+      }
+    ],
+    "literalQuery": [],
+    "headerParameters": [],
+    "cookieParameters": [],
+    "specificity": {
+      "staticSegments": 4,
+      "parameterSegments": 1,
+      "totalSegments": 5,
+      "staticCharacterCount": 22,
+      "constrainedParameters": 0,
+      "literalQueryParameters": 0
+    },
+    "originalIndex": 6,
+    "requestModes": [],
+    "responseModes": [
+      {
+        "statusCode": "200",
+        "mediaType": "application/json",
+        "decoderKind": "json",
+        "example": {
+          "Errors": 1,
+          "Links": [
+            {
+              "Status": "active",
+              "StatusCode": 200,
+              "URL": "https://example.com"
+            }
+          ]
+        },
+        "bodyBase64": null,
+        "exampleSource": "synthesized",
+        "authoredExampleSource": "none",
+        "hasAuthoredExample": false
+      }
+    ],
+    "defaultResponseIndex": 0,
+    "streamSelector": null,
+    "errorResponses": {
+      "400": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": "string",
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ],
+      "404": [
+        {
+          "statusCode": "404",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": "string",
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ]
+    }
+  },
+  {
+    "operationId": "SpamAssassinCheckParams",
+    "summary": "Returns the SpamAssassin summary (if enabled) of the message.\n\nThe ID can be set to `latest` to return the latest message.",
+    "method": "GET",
+    "pathTemplate": "/api/v1/message/{ID}/sa-check",
+    "regexSource": "^/api/v1/message/(?<sdkPath0>[^/]+)/sa-check$",
+    "pathParams": ["ID"],
+    "pathParameters": [
+      {
+        "wireName": "ID",
+        "required": true,
+        "style": "simple",
+        "explode": false,
+        "allowReserved": false,
+        "isArray": false,
+        "jsonContent": false,
+        "shape": "scalar",
+        "members": [],
+        "example": "id-1",
+        "routeRepresentative": "sdk-route-1"
+      }
+    ],
+    "queryParameters": [],
+    "literalQuery": [],
+    "headerParameters": [],
+    "cookieParameters": [],
+    "specificity": {
+      "staticSegments": 4,
+      "parameterSegments": 1,
+      "totalSegments": 5,
+      "staticCharacterCount": 20,
+      "constrainedParameters": 0,
+      "literalQueryParameters": 0
+    },
+    "originalIndex": 11,
+    "requestModes": [],
+    "responseModes": [
+      {
+        "statusCode": "200",
+        "mediaType": "application/json",
+        "decoderKind": "json",
+        "example": {
+          "Error": "Error",
+          "IsSpam": false,
+          "Rules": [
+            {
+              "Description": "example text",
+              "Name": "Example Name",
+              "Score": 1
+            }
+          ],
+          "Score": 1
+        },
+        "bodyBase64": null,
+        "exampleSource": "synthesized",
+        "authoredExampleSource": "none",
+        "hasAuthoredExample": false
+      }
+    ],
+    "defaultResponseIndex": 0,
+    "streamSelector": null,
+    "errorResponses": {
+      "400": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": "string",
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ],
+      "404": [
+        {
+          "statusCode": "404",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": "string",
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ]
+    }
+  },
+  {
+    "operationId": "GetHeadersParams",
+    "summary": "Returns the message headers as an array. Note that header keys are returned alphabetically.\n\nThe ID can be set to `latest` to return the latest message headers.",
+    "method": "GET",
+    "pathTemplate": "/api/v1/message/{ID}/headers",
+    "regexSource": "^/api/v1/message/(?<sdkPath0>[^/]+)/headers$",
+    "pathParams": ["ID"],
+    "pathParameters": [
+      {
+        "wireName": "ID",
+        "required": true,
+        "style": "simple",
+        "explode": false,
+        "allowReserved": false,
+        "isArray": false,
+        "jsonContent": false,
+        "shape": "scalar",
+        "members": [],
+        "example": "id-1",
+        "routeRepresentative": "sdk-route-1"
+      }
+    ],
+    "queryParameters": [],
+    "literalQuery": [],
+    "headerParameters": [],
+    "cookieParameters": [],
+    "specificity": {
+      "staticSegments": 4,
+      "parameterSegments": 1,
+      "totalSegments": 5,
+      "staticCharacterCount": 19,
+      "constrainedParameters": 0,
+      "literalQueryParameters": 0
+    },
+    "originalIndex": 4,
+    "requestModes": [],
+    "responseModes": [
+      {
+        "statusCode": "200",
+        "mediaType": "application/json",
+        "decoderKind": "json",
+        "example": {
+          "key": ["key"]
+        },
+        "bodyBase64": null,
+        "exampleSource": "synthesized",
+        "authoredExampleSource": "none",
+        "hasAuthoredExample": false
+      }
+    ],
+    "defaultResponseIndex": 0,
+    "streamSelector": null,
+    "errorResponses": {
+      "400": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": "string",
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ],
+      "404": [
+        {
+          "statusCode": "404",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": "string",
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ]
+    }
+  },
+  {
+    "operationId": "ReleaseMessageParams",
+    "summary": "Release a message via a pre-configured external SMTP server. This is only enabled if message relaying has been configured.\n\nThe ID can be set to `latest` to reference the latest message.",
+    "method": "POST",
+    "pathTemplate": "/api/v1/message/{ID}/release",
+    "regexSource": "^/api/v1/message/(?<sdkPath0>[^/]+)/release$",
+    "pathParams": ["ID"],
+    "pathParameters": [
+      {
+        "wireName": "ID",
+        "required": true,
+        "style": "simple",
+        "explode": false,
+        "allowReserved": false,
+        "isArray": false,
+        "jsonContent": false,
+        "shape": "scalar",
+        "members": [],
+        "example": "id-1",
+        "routeRepresentative": "sdk-route-1"
+      }
+    ],
+    "queryParameters": [],
+    "literalQuery": [],
+    "headerParameters": [],
+    "cookieParameters": [],
+    "specificity": {
+      "staticSegments": 4,
+      "parameterSegments": 1,
+      "totalSegments": 5,
+      "staticCharacterCount": 19,
+      "constrainedParameters": 0,
+      "literalQueryParameters": 0
+    },
+    "originalIndex": 10,
+    "requestModes": [
+      {
+        "mediaType": "application/json",
+        "encoderKind": "json",
+        "required": false,
+        "bodyShape": "fields",
+        "requiredFields": ["To"],
+        "fields": [
+          {
+            "wireName": "To",
+            "repeated": true,
+            "partKind": "scalar",
+            "contentType": null
+          }
+        ],
+        "example": {
+          "To": ["user1@example.com", "user2@example.com"]
+        }
+      }
+    ],
+    "responseModes": [
+      {
+        "statusCode": "200",
+        "mediaType": "text/plain",
+        "decoderKind": "text",
+        "example": "string",
+        "bodyBase64": null,
+        "exampleSource": "synthesized",
+        "authoredExampleSource": "none",
+        "hasAuthoredExample": false
+      }
+    ],
+    "defaultResponseIndex": 0,
+    "streamSelector": null,
+    "errorResponses": {
+      "400": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": "string",
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ],
+      "404": [
+        {
+          "statusCode": "404",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": "string",
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ]
+    }
+  },
+  {
+    "operationId": "DownloadRawParams",
+    "summary": "Returns the full email source as plain text.\n\nThe ID can be set to `latest` to return the latest message source.",
+    "method": "GET",
+    "pathTemplate": "/api/v1/message/{ID}/raw",
+    "regexSource": "^/api/v1/message/(?<sdkPath0>[^/]+)/raw$",
+    "pathParams": ["ID"],
+    "pathParameters": [
+      {
+        "wireName": "ID",
+        "required": true,
+        "style": "simple",
+        "explode": false,
+        "allowReserved": false,
+        "isArray": false,
+        "jsonContent": false,
+        "shape": "scalar",
+        "members": [],
+        "example": "id-1",
+        "routeRepresentative": "sdk-route-1"
+      }
+    ],
+    "queryParameters": [],
+    "literalQuery": [],
+    "headerParameters": [],
+    "cookieParameters": [],
+    "specificity": {
+      "staticSegments": 4,
+      "parameterSegments": 1,
+      "totalSegments": 5,
+      "staticCharacterCount": 15,
+      "constrainedParameters": 0,
+      "literalQueryParameters": 0
+    },
+    "originalIndex": 9,
+    "requestModes": [],
+    "responseModes": [
+      {
+        "statusCode": "200",
+        "mediaType": "text/plain",
+        "decoderKind": "text",
+        "example": "string",
+        "bodyBase64": null,
+        "exampleSource": "synthesized",
+        "authoredExampleSource": "none",
+        "hasAuthoredExample": false
+      }
+    ],
+    "defaultResponseIndex": 0,
+    "streamSelector": null,
+    "errorResponses": {
+      "400": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": "string",
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ],
+      "404": [
+        {
+          "statusCode": "404",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": "string",
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ]
+    }
+  },
+  {
+    "operationId": "AttachmentParams",
+    "summary": "This will return the attachment part using the appropriate Content-Type.\n\nThe ID can be set to `latest` to reference the latest message.",
+    "method": "GET",
+    "pathTemplate": "/api/v1/message/{ID}/part/{PartID}",
+    "regexSource": "^/api/v1/message/(?<sdkPath0>[^/]+)/part/(?<sdkPath1>[^/]+)$",
+    "pathParams": ["ID", "PartID"],
+    "pathParameters": [
+      {
+        "wireName": "ID",
+        "required": true,
+        "style": "simple",
+        "explode": false,
+        "allowReserved": false,
+        "isArray": false,
+        "jsonContent": false,
+        "shape": "scalar",
+        "members": [],
+        "example": "id-1",
+        "routeRepresentative": "sdk-route-1"
+      },
+      {
+        "wireName": "PartID",
+        "required": true,
+        "style": "simple",
+        "explode": false,
+        "allowReserved": false,
+        "isArray": false,
+        "jsonContent": false,
+        "shape": "scalar",
+        "members": [],
+        "example": "Part-1",
+        "routeRepresentative": "sdk-route-2"
+      }
+    ],
+    "queryParameters": [],
+    "literalQuery": [],
+    "headerParameters": [],
+    "cookieParameters": [],
+    "specificity": {
+      "staticSegments": 4,
+      "parameterSegments": 2,
+      "totalSegments": 6,
+      "staticCharacterCount": 16,
+      "constrainedParameters": 0,
+      "literalQueryParameters": 0
+    },
+    "originalIndex": 7,
+    "requestModes": [],
+    "responseModes": [
+      {
+        "statusCode": "200",
+        "mediaType": "application/*",
+        "decoderKind": "bytes",
+        "example": null,
+        "bodyBase64": "WlhoaGJYQnNaUT09",
+        "exampleSource": "synthesized",
+        "authoredExampleSource": "none",
+        "hasAuthoredExample": false
+      },
+      {
+        "statusCode": "200",
+        "mediaType": "image/*",
+        "decoderKind": "bytes",
+        "example": null,
+        "bodyBase64": "WlhoaGJYQnNaUT09",
+        "exampleSource": "synthesized",
+        "authoredExampleSource": "none",
+        "hasAuthoredExample": false
+      },
+      {
+        "statusCode": "200",
+        "mediaType": "text/*",
+        "decoderKind": "bytes",
+        "example": null,
+        "bodyBase64": "WlhoaGJYQnNaUT09",
+        "exampleSource": "synthesized",
+        "authoredExampleSource": "none",
+        "hasAuthoredExample": false
+      }
+    ],
+    "defaultResponseIndex": 0,
+    "streamSelector": null,
+    "errorResponses": {
+      "400": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": "string",
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ],
+      "404": [
+        {
+          "statusCode": "404",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": "string",
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ]
+    }
+  },
+  {
+    "operationId": "DeleteMessagesParams",
+    "summary": "Delete individual or all messages. If no IDs are provided then all messages are deleted.",
+    "method": "DELETE",
+    "pathTemplate": "/api/v1/messages",
+    "regexSource": "^/api/v1/messages$",
+    "pathParams": [],
+    "pathParameters": [],
+    "queryParameters": [],
+    "literalQuery": [],
+    "headerParameters": [],
+    "cookieParameters": [],
+    "specificity": {
+      "staticSegments": 3,
+      "parameterSegments": 0,
+      "totalSegments": 3,
+      "staticCharacterCount": 13,
+      "constrainedParameters": 0,
+      "literalQueryParameters": 0
+    },
+    "originalIndex": 14,
+    "requestModes": [
+      {
+        "mediaType": "application/json",
+        "encoderKind": "json",
+        "required": false,
+        "bodyShape": "fields",
+        "requiredFields": [],
+        "fields": [
+          {
+            "wireName": "IDs",
+            "repeated": true,
+            "partKind": "scalar",
+            "contentType": null
+          }
+        ],
+        "example": {
+          "IDs": ["4oRBnPtCXgAqZniRhzLNmS", "hXayS6wnCgNnt6aFTvmOF6"]
+        }
+      }
+    ],
+    "responseModes": [
+      {
+        "statusCode": "200",
+        "mediaType": "text/plain",
+        "decoderKind": "text",
+        "example": "string",
+        "bodyBase64": null,
+        "exampleSource": "synthesized",
+        "authoredExampleSource": "none",
+        "hasAuthoredExample": false
+      }
+    ],
+    "defaultResponseIndex": 0,
+    "streamSelector": null,
+    "errorResponses": {
+      "400": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": "string",
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ]
+    }
+  },
+  {
+    "operationId": "GetMessagesParams",
+    "summary": "Returns messages from the mailbox ordered from newest to oldest.",
+    "method": "GET",
+    "pathTemplate": "/api/v1/messages",
+    "regexSource": "^/api/v1/messages$",
+    "pathParams": [],
+    "pathParameters": [],
+    "queryParameters": [
+      {
+        "wireName": "start",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "allowReserved": false,
+        "isArray": false,
+        "jsonContent": false,
+        "shape": "scalar",
+        "members": [],
+        "example": 0
+      },
+      {
+        "wireName": "limit",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "allowReserved": false,
+        "isArray": false,
+        "jsonContent": false,
+        "shape": "scalar",
+        "members": [],
+        "example": 50
+      }
+    ],
+    "literalQuery": [],
+    "headerParameters": [],
+    "cookieParameters": [],
+    "specificity": {
+      "staticSegments": 3,
+      "parameterSegments": 0,
+      "totalSegments": 3,
+      "staticCharacterCount": 13,
+      "constrainedParameters": 0,
+      "literalQueryParameters": 0
+    },
+    "originalIndex": 12,
+    "requestModes": [],
+    "responseModes": [
+      {
+        "statusCode": "200",
+        "mediaType": "application/json",
+        "decoderKind": "json",
+        "example": {
+          "messages": [
+            {
+              "Attachments": 1,
+              "Bcc": [
+                {
+                  "Address": "Address",
+                  "Name": "Example Name"
+                }
+              ],
+              "Cc": [
+                {
+                  "Address": "Address",
+                  "Name": "Example Name"
+                }
+              ],
+              "Created": "2024-01-01T00:00:00Z",
+              "From": {
+                "Address": "Address",
+                "Name": "Example Name"
+              },
+              "ID": "id-1",
+              "MessageID": "Message-1",
+              "Read": false,
+              "ReplyTo": [
+                {
+                  "Address": "Address",
+                  "Name": "Example Name"
+                }
+              ],
+              "Size": 1,
+              "Snippet": "Snippet",
+              "Subject": "Subject",
+              "Tags": ["Tags"],
+              "To": [
+                {
+                  "Address": "Address",
+                  "Name": "Example Name"
+                }
+              ],
+              "Username": "Example Name"
+            }
+          ],
+          "messages_count": 30,
+          "messages_unread": 30,
+          "start": 1,
+          "tags": ["tags"],
+          "total": 100,
+          "unread": 1
+        },
+        "bodyBase64": null,
+        "exampleSource": "synthesized",
+        "authoredExampleSource": "none",
+        "hasAuthoredExample": false
+      }
+    ],
+    "defaultResponseIndex": 0,
+    "streamSelector": null,
+    "errorResponses": {
+      "400": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": "string",
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ]
+    }
+  },
+  {
+    "operationId": "SetReadStatusParams",
+    "summary": "You can optionally provide an array of IDs or a search string.\nIf neither IDs nor search is provided then all mailbox messages are updated.",
+    "method": "PUT",
+    "pathTemplate": "/api/v1/messages",
+    "regexSource": "^/api/v1/messages$",
+    "pathParams": [],
+    "pathParameters": [],
+    "queryParameters": [
+      {
+        "wireName": "tz",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "allowReserved": false,
+        "isArray": false,
+        "jsonContent": false,
+        "shape": "scalar",
+        "members": [],
+        "example": "tz"
+      }
+    ],
+    "literalQuery": [],
+    "headerParameters": [],
+    "cookieParameters": [],
+    "specificity": {
+      "staticSegments": 3,
+      "parameterSegments": 0,
+      "totalSegments": 3,
+      "staticCharacterCount": 13,
+      "constrainedParameters": 0,
+      "literalQueryParameters": 0
+    },
+    "originalIndex": 13,
+    "requestModes": [
+      {
+        "mediaType": "application/json",
+        "encoderKind": "json",
+        "required": false,
+        "bodyShape": "fields",
+        "requiredFields": [],
+        "fields": [
+          {
+            "wireName": "IDs",
+            "repeated": true,
+            "partKind": "scalar",
+            "contentType": null
+          },
+          {
+            "wireName": "Read",
+            "repeated": false,
+            "partKind": "scalar",
+            "contentType": null
+          },
+          {
+            "wireName": "Search",
+            "repeated": false,
+            "partKind": "scalar",
+            "contentType": null
+          }
+        ],
+        "example": {
+          "IDs": ["4oRBnPtCXgAqZniRhzLNmS", "hXayS6wnCgNnt6aFTvmOF6"],
+          "Read": true,
+          "Search": "tag:backups"
+        }
+      }
+    ],
+    "responseModes": [
+      {
+        "statusCode": "200",
+        "mediaType": "text/plain",
+        "decoderKind": "text",
+        "example": "string",
+        "bodyBase64": null,
+        "exampleSource": "synthesized",
+        "authoredExampleSource": "none",
+        "hasAuthoredExample": false
+      }
+    ],
+    "defaultResponseIndex": 0,
+    "streamSelector": null,
+    "errorResponses": {
+      "400": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": "string",
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ]
+    }
+  },
+  {
+    "operationId": "DeleteSearchParams",
+    "summary": "Delete all messages matching [a search](https://mailpit.axllent.org/docs/usage/search-filters/).",
+    "method": "DELETE",
+    "pathTemplate": "/api/v1/search",
+    "regexSource": "^/api/v1/search$",
+    "pathParams": [],
+    "pathParameters": [],
+    "queryParameters": [
+      {
+        "wireName": "query",
+        "required": true,
+        "style": "form",
+        "explode": true,
+        "allowReserved": false,
+        "isArray": false,
+        "jsonContent": false,
+        "shape": "scalar",
+        "members": [],
+        "example": "query"
+      },
+      {
+        "wireName": "tz",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "allowReserved": false,
+        "isArray": false,
+        "jsonContent": false,
+        "shape": "scalar",
+        "members": [],
+        "example": "tz"
+      }
+    ],
+    "literalQuery": [],
+    "headerParameters": [],
+    "cookieParameters": [],
+    "specificity": {
+      "staticSegments": 3,
+      "parameterSegments": 0,
+      "totalSegments": 3,
+      "staticCharacterCount": 11,
+      "constrainedParameters": 0,
+      "literalQueryParameters": 0
+    },
+    "originalIndex": 16,
+    "requestModes": [],
+    "responseModes": [
+      {
+        "statusCode": "200",
+        "mediaType": "application/json",
+        "decoderKind": "json",
+        "example": "string",
+        "bodyBase64": null,
+        "exampleSource": "synthesized",
+        "authoredExampleSource": "none",
+        "hasAuthoredExample": false
+      }
+    ],
+    "defaultResponseIndex": 0,
+    "streamSelector": null,
+    "errorResponses": {
+      "400": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": "string",
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ]
+    }
+  },
+  {
+    "operationId": "SearchParams",
+    "summary": "Returns messages matching [a search](https://mailpit.axllent.org/docs/usage/search-filters/), sorted by received date (descending).",
+    "method": "GET",
+    "pathTemplate": "/api/v1/search",
+    "regexSource": "^/api/v1/search$",
+    "pathParams": [],
+    "pathParameters": [],
+    "queryParameters": [
+      {
+        "wireName": "query",
+        "required": true,
+        "style": "form",
+        "explode": true,
+        "allowReserved": false,
+        "isArray": false,
+        "jsonContent": false,
+        "shape": "scalar",
+        "members": [],
+        "example": "query"
+      },
+      {
+        "wireName": "start",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "allowReserved": false,
+        "isArray": false,
+        "jsonContent": false,
+        "shape": "scalar",
+        "members": [],
+        "example": "0"
+      },
+      {
+        "wireName": "limit",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "allowReserved": false,
+        "isArray": false,
+        "jsonContent": false,
+        "shape": "scalar",
+        "members": [],
+        "example": "50"
+      },
+      {
+        "wireName": "tz",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "allowReserved": false,
+        "isArray": false,
+        "jsonContent": false,
+        "shape": "scalar",
+        "members": [],
+        "example": "tz"
+      }
+    ],
+    "literalQuery": [],
+    "headerParameters": [],
+    "cookieParameters": [],
+    "specificity": {
+      "staticSegments": 3,
+      "parameterSegments": 0,
+      "totalSegments": 3,
+      "staticCharacterCount": 11,
+      "constrainedParameters": 0,
+      "literalQueryParameters": 0
+    },
+    "originalIndex": 15,
+    "requestModes": [],
+    "responseModes": [
+      {
+        "statusCode": "200",
+        "mediaType": "application/json",
+        "decoderKind": "json",
+        "example": {
+          "messages": [
+            {
+              "Attachments": 1,
+              "Bcc": [
+                {
+                  "Address": "Address",
+                  "Name": "Example Name"
+                }
+              ],
+              "Cc": [
+                {
+                  "Address": "Address",
+                  "Name": "Example Name"
+                }
+              ],
+              "Created": "2024-01-01T00:00:00Z",
+              "From": {
+                "Address": "Address",
+                "Name": "Example Name"
+              },
+              "ID": "id-1",
+              "MessageID": "Message-1",
+              "Read": false,
+              "ReplyTo": [
+                {
+                  "Address": "Address",
+                  "Name": "Example Name"
+                }
+              ],
+              "Size": 1,
+              "Snippet": "Snippet",
+              "Subject": "Subject",
+              "Tags": ["Tags"],
+              "To": [
+                {
+                  "Address": "Address",
+                  "Name": "Example Name"
+                }
+              ],
+              "Username": "Example Name"
+            }
+          ],
+          "messages_count": 30,
+          "messages_unread": 30,
+          "start": 1,
+          "tags": ["tags"],
+          "total": 100,
+          "unread": 1
+        },
+        "bodyBase64": null,
+        "exampleSource": "synthesized",
+        "authoredExampleSource": "none",
+        "hasAuthoredExample": false
+      }
+    ],
+    "defaultResponseIndex": 0,
+    "streamSelector": null,
+    "errorResponses": {
+      "400": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": "string",
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ]
+    }
+  },
+  {
+    "operationId": "getChaos",
+    "summary": "Returns the current Chaos triggers configuration.\nThis API route will return an error if Chaos is not enabled at runtime.",
+    "method": "GET",
+    "pathTemplate": "/api/v1/chaos",
+    "regexSource": "^/api/v1/chaos$",
+    "pathParams": [],
+    "pathParameters": [],
+    "queryParameters": [],
+    "literalQuery": [],
+    "headerParameters": [],
+    "cookieParameters": [],
+    "specificity": {
+      "staticSegments": 3,
+      "parameterSegments": 0,
+      "totalSegments": 3,
+      "staticCharacterCount": 10,
+      "constrainedParameters": 0,
+      "literalQueryParameters": 0
+    },
+    "originalIndex": 0,
+    "requestModes": [],
+    "responseModes": [
+      {
+        "statusCode": "200",
+        "mediaType": "application/json",
+        "decoderKind": "json",
+        "example": {
+          "Authentication": {
+            "ErrorCode": 451,
+            "Probability": 5
+          },
+          "Recipient": {
+            "ErrorCode": 451,
+            "Probability": 5
+          },
+          "Sender": {
+            "ErrorCode": 451,
+            "Probability": 5
+          }
+        },
+        "bodyBase64": null,
+        "exampleSource": "synthesized",
+        "authoredExampleSource": "none",
+        "hasAuthoredExample": false
+      }
+    ],
+    "defaultResponseIndex": 0,
+    "streamSelector": null,
+    "errorResponses": {
+      "400": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": "string",
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ]
+    }
+  },
+  {
+    "operationId": "setChaosParams",
+    "summary": "Set the Chaos triggers configuration and return the updated values.\nThis API route will return an error if Chaos is not enabled at runtime.\n\nIf any triggers are omitted from the request, then those are reset to their\ndefault values with a 0% probability (ie: disabled).\nSetting a blank `{}` will reset all triggers to their default values.",
+    "method": "PUT",
+    "pathTemplate": "/api/v1/chaos",
+    "regexSource": "^/api/v1/chaos$",
+    "pathParams": [],
+    "pathParameters": [],
+    "queryParameters": [],
+    "literalQuery": [],
+    "headerParameters": [],
+    "cookieParameters": [],
+    "specificity": {
+      "staticSegments": 3,
+      "parameterSegments": 0,
+      "totalSegments": 3,
+      "staticCharacterCount": 10,
+      "constrainedParameters": 0,
+      "literalQueryParameters": 0
+    },
+    "originalIndex": 1,
+    "requestModes": [
+      {
+        "mediaType": "application/json",
+        "encoderKind": "json",
+        "required": false,
+        "bodyShape": "fields",
+        "requiredFields": [],
+        "fields": [
+          {
+            "wireName": "Authentication",
+            "repeated": false,
+            "partKind": "json",
+            "contentType": null
+          },
+          {
+            "wireName": "Recipient",
+            "repeated": false,
+            "partKind": "json",
+            "contentType": null
+          },
+          {
+            "wireName": "Sender",
+            "repeated": false,
+            "partKind": "json",
+            "contentType": null
+          }
+        ],
+        "example": {
+          "Authentication": {
+            "ErrorCode": 451,
+            "Probability": 5
+          },
+          "Recipient": {
+            "ErrorCode": 451,
+            "Probability": 5
+          },
+          "Sender": {
+            "ErrorCode": 451,
+            "Probability": 5
+          }
+        }
+      }
+    ],
+    "responseModes": [
+      {
+        "statusCode": "200",
+        "mediaType": "application/json",
+        "decoderKind": "json",
+        "example": {
+          "Authentication": {
+            "ErrorCode": 451,
+            "Probability": 5
+          },
+          "Recipient": {
+            "ErrorCode": 451,
+            "Probability": 5
+          },
+          "Sender": {
+            "ErrorCode": 451,
+            "Probability": 5
+          }
+        },
+        "bodyBase64": null,
+        "exampleSource": "synthesized",
+        "authoredExampleSource": "none",
+        "hasAuthoredExample": false
+      }
+    ],
+    "defaultResponseIndex": 0,
+    "streamSelector": null,
+    "errorResponses": {
+      "400": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": "string",
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ]
+    }
+  },
+  {
+    "operationId": "WebUIConfigurationResponse",
+    "summary": "Returns configuration settings for the web UI.\nIntended for web UI only!",
+    "method": "GET",
+    "pathTemplate": "/api/v1/webui",
+    "regexSource": "^/api/v1/webui$",
+    "pathParams": [],
+    "pathParameters": [],
+    "queryParameters": [],
+    "literalQuery": [],
+    "headerParameters": [],
+    "cookieParameters": [],
+    "specificity": {
+      "staticSegments": 3,
+      "parameterSegments": 0,
+      "totalSegments": 3,
+      "staticCharacterCount": 10,
+      "constrainedParameters": 0,
+      "literalQueryParameters": 0
+    },
+    "originalIndex": 22,
+    "requestModes": [],
+    "responseModes": [
+      {
+        "statusCode": "200",
+        "mediaType": "application/json",
+        "decoderKind": "json",
+        "example": {
+          "ChaosEnabled": false,
+          "DuplicatesIgnored": false,
+          "HideDeleteAllButton": false,
+          "Label": "Label",
+          "MessageRelay": {
+            "AllowedRecipients": "AllowedRecipients",
+            "BlockedRecipients": "BlockedRecipients",
+            "Enabled": false,
+            "OverrideFrom": "OverrideFrom",
+            "PreserveMessageIDs": false,
+            "ReturnPath": "ReturnPath",
+            "SMTPServer": "SMTPServer"
+          },
+          "SpamAssassin": false
+        },
+        "bodyBase64": null,
+        "exampleSource": "synthesized",
+        "authoredExampleSource": "none",
+        "hasAuthoredExample": false
+      }
+    ],
+    "defaultResponseIndex": 0,
+    "streamSelector": null,
+    "errorResponses": {
+      "400": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": "string",
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ]
+    }
+  },
+  {
+    "operationId": "AppInformation",
+    "summary": "Returns basic runtime information, message totals and latest release version.",
+    "method": "GET",
+    "pathTemplate": "/api/v1/info",
+    "regexSource": "^/api/v1/info$",
+    "pathParams": [],
+    "pathParameters": [],
+    "queryParameters": [],
+    "literalQuery": [],
+    "headerParameters": [],
+    "cookieParameters": [],
+    "specificity": {
+      "staticSegments": 3,
+      "parameterSegments": 0,
+      "totalSegments": 3,
+      "staticCharacterCount": 9,
+      "constrainedParameters": 0,
+      "literalQueryParameters": 0
+    },
+    "originalIndex": 2,
+    "requestModes": [],
+    "responseModes": [
+      {
+        "statusCode": "200",
+        "mediaType": "application/json",
+        "decoderKind": "json",
+        "example": {
+          "Database": "Database",
+          "DatabaseSize": 1,
+          "LatestVersion": "LatestVersion",
+          "Messages": 30,
+          "RuntimeStats": {
+            "Memory": 1,
+            "MessagesDeleted": 30,
+            "SMTPAccepted": 1,
+            "SMTPAcceptedSize": 1,
+            "SMTPIgnored": 1,
+            "SMTPRejected": 1,
+            "Uptime": 1
+          },
+          "Tags": {
+            "key": 1
+          },
+          "Unread": 1,
+          "Version": "Version"
+        },
+        "bodyBase64": null,
+        "exampleSource": "synthesized",
+        "authoredExampleSource": "none",
+        "hasAuthoredExample": false
+      }
+    ],
+    "defaultResponseIndex": 0,
+    "streamSelector": null,
+    "errorResponses": {
+      "400": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": "string",
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ]
+    }
+  },
+  {
+    "operationId": "SendMessageParams",
+    "summary": "Sends a message through the HTTP API using the supplied sender, recipients, content, and optional delivery metadata. Provide `From` with an `Email` address; add recipients, message bodies, attachments, headers, or tags as needed. A 200 response returns the message ID.",
+    "method": "POST",
+    "pathTemplate": "/api/v1/send",
+    "regexSource": "^/api/v1/send$",
+    "pathParams": [],
+    "pathParameters": [],
+    "queryParameters": [],
+    "literalQuery": [],
+    "headerParameters": [],
+    "cookieParameters": [],
+    "specificity": {
+      "staticSegments": 3,
+      "parameterSegments": 0,
+      "totalSegments": 3,
+      "staticCharacterCount": 9,
+      "constrainedParameters": 0,
+      "literalQueryParameters": 0
+    },
+    "originalIndex": 17,
+    "requestModes": [
+      {
+        "mediaType": "application/json",
+        "encoderKind": "json",
+        "required": false,
+        "bodyShape": "fields",
+        "requiredFields": ["From"],
+        "fields": [
+          {
+            "wireName": "Attachments",
+            "repeated": true,
+            "partKind": "json",
+            "contentType": null
+          },
+          {
+            "wireName": "Bcc",
+            "repeated": true,
+            "partKind": "scalar",
+            "contentType": null
+          },
+          {
+            "wireName": "Cc",
+            "repeated": true,
+            "partKind": "json",
+            "contentType": null
+          },
+          {
+            "wireName": "From",
+            "repeated": false,
+            "partKind": "json",
+            "contentType": null
+          },
+          {
+            "wireName": "HTML",
+            "repeated": false,
+            "partKind": "scalar",
+            "contentType": null
+          },
+          {
+            "wireName": "Headers",
+            "repeated": false,
+            "partKind": "json",
+            "contentType": null
+          },
+          {
+            "wireName": "ReplyTo",
+            "repeated": true,
+            "partKind": "json",
+            "contentType": null
+          },
+          {
+            "wireName": "Subject",
+            "repeated": false,
+            "partKind": "scalar",
+            "contentType": null
+          },
+          {
+            "wireName": "Tags",
+            "repeated": true,
+            "partKind": "scalar",
+            "contentType": null
+          },
+          {
+            "wireName": "Text",
+            "repeated": false,
+            "partKind": "scalar",
+            "contentType": null
+          },
+          {
+            "wireName": "To",
+            "repeated": true,
+            "partKind": "json",
+            "contentType": null
+          }
+        ],
+        "example": {
+          "Attachments": [
+            {
+              "Content": "iVBORw0KGgoAAAANSUhEUgAAAEEAAAA8CAMAAAAOlSdoAAAACXBIWXMAAAHrAAAB6wGM2bZBAAAAS1BMVEVHcEwRfnUkZ2gAt4UsSF8At4UtSV4At4YsSV4At4YsSV8At4YsSV4At4YsSV4sSV4At4YsSV4At4YtSV4At4YsSV4At4YtSV8At4YsUWYNAAAAGHRSTlMAAwoXGiktRE5dbnd7kpOlr7zJ0d3h8PD8PCSRAAACWUlEQVR42pXT4ZaqIBSG4W9rhqQYocG+/ys9Y0Z0Br+x3j8zaxUPewFh65K+7yrIMeIY4MT3wPfEJCidKXEMnLaVkxDiELiMz4WEOAZSFghxBIypCOlKiAMgXfIqTnBgSm8CIQ6BImxEUxEckClVQiHGj4Ba4AQHikAIClwTE9KtIghAhUJwoLkmLnCiAHJLRKgIMsEtVUKbBUIwoAg2C4QgQBE6l4VCnApBgSKYLLApCnCa0+96AEMW2BQcmC+Pr3nfp7o5Exy49gIADcIqUELGfeA+bp93LmAJp8QJoEcN3C7NY3sbVANixMyI0nku20/n5/ZRf3KI2k6JEDWQtxcbdGuAqu3TAXG+/799Oyyas1B1MnMiA+XyxHp9q0PUKGPiRAau1fZbLRZV09wZcT8/gHk8QQAxXn8VgaDqcUmU6O/r28nbVwXAqca2mRNtPAF5+zoP2MeN9Fy4NgC6RfcbgE7XITBRYTtOE3U3C2DVff7pk+PkUxgAbvtnPXJaD6DxulMLwOhPS/M3MQkgg1ZFrIXnmfaZoOfpKiFgzeZD/WuKqQEGrfJYkyWf6vlG3xUgTuscnkNkQsb599q124kdpMUjCa/XARHs1gZymVtGt3wLkiFv8rUgTxitYCex5EVGec0Y9VmoDTFBSQte2TfXGXlf7hbdaUM9Sk7fisEN9qfBBTK+FZcvM9fQSdkl2vj4W2oX/bRogO3XasiNH7R0eW7fgRM834ImTg+Lg6BEnx4vz81rhr+MYPBBQg1v8GndEOrthxaCTxNAOut8WKLGZQl+MPz88Q9tAO/hVuSeqQAAAABJRU5ErkJggg==",
+              "ContentID": "mailpit-logo",
+              "ContentType": "image/png",
+              "Filename": "mailpit.png"
+            }
+          ],
+          "Bcc": ["jack@example.com"],
+          "Cc": [
+            {
+              "Email": "manager@example.com",
+              "Name": "Manager"
+            }
+          ],
+          "From": {
+            "Email": "john@example.com",
+            "Name": "John Doe"
+          },
+          "HTML": "<div style=\"text-align:center\"><p style=\"font-family: arial; font-size: 24px;\">Mailpit is <b>awesome</b>!</p><p><img src=\"cid:mailpit-logo\" /></p></div>",
+          "Headers": {
+            "X-IP": "1.2.3.4"
+          },
+          "ReplyTo": [
+            {
+              "Email": "secretary@example.com",
+              "Name": "Secretary"
+            }
+          ],
+          "Subject": "Mailpit message via the HTTP API",
+          "Tags": ["Tag 1", "Tag 2"],
+          "Text": "Mailpit is awesome!",
+          "To": [
+            {
+              "Email": "jane@example.com",
+              "Name": "Jane Doe"
+            }
+          ]
+        }
+      }
+    ],
+    "responseModes": [
+      {
+        "statusCode": "200",
+        "mediaType": "application/json",
+        "decoderKind": "json",
+        "example": {
+          "ID": "iAfZVVe2UQfNSG5BAjgYwa"
+        },
+        "bodyBase64": null,
+        "exampleSource": "synthesized",
+        "authoredExampleSource": "none",
+        "hasAuthoredExample": false
+      }
+    ],
+    "defaultResponseIndex": 0,
+    "streamSelector": null,
+    "errorResponses": {
+      "400": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": {
+            "Error": "invalid format"
+          },
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ]
+    }
+  },
+  {
+    "operationId": "GetAllTags",
+    "summary": "Lists all unique tags currently associated with messages. Use the returned values to retrieve the set of existing message tags. The response is a JSON array of strings.",
+    "method": "GET",
+    "pathTemplate": "/api/v1/tags",
+    "regexSource": "^/api/v1/tags$",
+    "pathParams": [],
+    "pathParameters": [],
+    "queryParameters": [],
+    "literalQuery": [],
+    "headerParameters": [],
+    "cookieParameters": [],
+    "specificity": {
+      "staticSegments": 3,
+      "parameterSegments": 0,
+      "totalSegments": 3,
+      "staticCharacterCount": 9,
+      "constrainedParameters": 0,
+      "literalQueryParameters": 0
+    },
+    "originalIndex": 18,
+    "requestModes": [],
+    "responseModes": [
+      {
+        "statusCode": "200",
+        "mediaType": "application/json",
+        "decoderKind": "json",
+        "example": ["string"],
+        "bodyBase64": null,
+        "exampleSource": "synthesized",
+        "authoredExampleSource": "none",
+        "hasAuthoredExample": false
+      }
+    ],
+    "defaultResponseIndex": 0,
+    "streamSelector": null,
+    "errorResponses": {
+      "400": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": "string",
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ]
+    }
+  },
+  {
+    "operationId": "SetTagsParams",
+    "summary": "This will overwrite any existing tags for selected message database IDs. To remove all tags from a message, pass an empty tags array.",
+    "method": "PUT",
+    "pathTemplate": "/api/v1/tags",
+    "regexSource": "^/api/v1/tags$",
+    "pathParams": [],
+    "pathParameters": [],
+    "queryParameters": [],
+    "literalQuery": [],
+    "headerParameters": [],
+    "cookieParameters": [],
+    "specificity": {
+      "staticSegments": 3,
+      "parameterSegments": 0,
+      "totalSegments": 3,
+      "staticCharacterCount": 9,
+      "constrainedParameters": 0,
+      "literalQueryParameters": 0
+    },
+    "originalIndex": 19,
+    "requestModes": [
+      {
+        "mediaType": "application/json",
+        "encoderKind": "json",
+        "required": false,
+        "bodyShape": "fields",
+        "requiredFields": ["IDs", "Tags"],
+        "fields": [
+          {
+            "wireName": "IDs",
+            "repeated": true,
+            "partKind": "scalar",
+            "contentType": null
+          },
+          {
+            "wireName": "Tags",
+            "repeated": true,
+            "partKind": "scalar",
+            "contentType": null
+          }
+        ],
+        "example": {
+          "IDs": ["4oRBnPtCXgAqZniRhzLNmS", "hXayS6wnCgNnt6aFTvmOF6"],
+          "Tags": ["Tag 1", "Tag 2"]
+        }
+      }
+    ],
+    "responseModes": [
+      {
+        "statusCode": "200",
+        "mediaType": "text/plain",
+        "decoderKind": "text",
+        "example": "string",
+        "bodyBase64": null,
+        "exampleSource": "synthesized",
+        "authoredExampleSource": "none",
+        "hasAuthoredExample": false
+      }
+    ],
+    "defaultResponseIndex": 0,
+    "streamSelector": null,
+    "errorResponses": {
+      "400": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": "string",
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ]
+    }
+  },
+  {
+    "operationId": "GetMessageParams",
+    "summary": "Returns the summary of a message, marking the message as read.\n\nThe ID can be set to `latest` to return the latest message.",
+    "method": "GET",
+    "pathTemplate": "/api/v1/message/{ID}",
+    "regexSource": "^/api/v1/message/(?<sdkPath0>[^/]+)$",
+    "pathParams": ["ID"],
+    "pathParameters": [
+      {
+        "wireName": "ID",
+        "required": true,
+        "style": "simple",
+        "explode": false,
+        "allowReserved": false,
+        "isArray": false,
+        "jsonContent": false,
+        "shape": "scalar",
+        "members": [],
+        "example": "id-1",
+        "routeRepresentative": "sdk-route-1"
+      }
+    ],
+    "queryParameters": [],
+    "literalQuery": [],
+    "headerParameters": [],
+    "cookieParameters": [],
+    "specificity": {
+      "staticSegments": 3,
+      "parameterSegments": 1,
+      "totalSegments": 4,
+      "staticCharacterCount": 12,
+      "constrainedParameters": 0,
+      "literalQueryParameters": 0
+    },
+    "originalIndex": 3,
+    "requestModes": [],
+    "responseModes": [
+      {
+        "statusCode": "200",
+        "mediaType": "application/json",
+        "decoderKind": "json",
+        "example": {
+          "Attachments": [
+            {
+              "Checksums": {
+                "MD5": "MD5",
+                "SHA1": "SHA1",
+                "SHA256": "SHA256"
+              },
+              "ContentID": "Content-1",
+              "ContentType": "ContentType",
+              "FileName": "Example Name",
+              "PartID": "Part-1",
+              "Size": 1
+            }
+          ],
+          "Bcc": [
+            {
+              "Address": "Address",
+              "Name": "Example Name"
+            }
+          ],
+          "Cc": [
+            {
+              "Address": "Address",
+              "Name": "Example Name"
+            }
+          ],
+          "Date": "2024-01-01T00:00:00Z",
+          "From": {
+            "Address": "Address",
+            "Name": "Example Name"
+          },
+          "HTML": "HTML",
+          "ID": "id-1",
+          "Inline": [
+            {
+              "Checksums": {
+                "MD5": "MD5",
+                "SHA1": "SHA1",
+                "SHA256": "SHA256"
+              },
+              "ContentID": "Content-1",
+              "ContentType": "ContentType",
+              "FileName": "Example Name",
+              "PartID": "Part-1",
+              "Size": 1
+            }
+          ],
+          "ListUnsubscribe": {
+            "Errors": "Errors",
+            "Header": "Header",
+            "HeaderPost": "HeaderPost",
+            "Links": ["https://example.com"]
+          },
+          "MessageID": "Message-1",
+          "ReplyTo": [
+            {
+              "Address": "Address",
+              "Name": "Example Name"
+            }
+          ],
+          "ReturnPath": "ReturnPath",
+          "Size": 1,
+          "Subject": "Subject",
+          "Tags": ["Tags"],
+          "Text": "Text",
+          "To": [
+            {
+              "Address": "Address",
+              "Name": "Example Name"
+            }
+          ],
+          "Username": "Example Name"
+        },
+        "bodyBase64": null,
+        "exampleSource": "synthesized",
+        "authoredExampleSource": "none",
+        "hasAuthoredExample": false
+      }
+    ],
+    "defaultResponseIndex": 0,
+    "streamSelector": null,
+    "errorResponses": {
+      "400": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": "string",
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ],
+      "404": [
+        {
+          "statusCode": "404",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": "string",
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ]
+    }
+  },
+  {
+    "operationId": "DeleteTagParams",
+    "summary": "Deletes a tag. This will not delete any messages with the tag, but will remove the tag from any messages containing the tag.",
+    "method": "DELETE",
+    "pathTemplate": "/api/v1/tags/{Tag}",
+    "regexSource": "^/api/v1/tags/(?<sdkPath0>[^/]+)$",
+    "pathParams": ["Tag"],
+    "pathParameters": [
+      {
+        "wireName": "Tag",
+        "required": true,
+        "style": "simple",
+        "explode": false,
+        "allowReserved": false,
+        "isArray": false,
+        "jsonContent": false,
+        "shape": "scalar",
+        "members": [],
+        "example": "Tag",
+        "routeRepresentative": "sdk-route-1"
+      }
+    ],
+    "queryParameters": [],
+    "literalQuery": [],
+    "headerParameters": [],
+    "cookieParameters": [],
+    "specificity": {
+      "staticSegments": 3,
+      "parameterSegments": 1,
+      "totalSegments": 4,
+      "staticCharacterCount": 9,
+      "constrainedParameters": 0,
+      "literalQueryParameters": 0
+    },
+    "originalIndex": 21,
+    "requestModes": [],
+    "responseModes": [
+      {
+        "statusCode": "200",
+        "mediaType": "text/plain",
+        "decoderKind": "text",
+        "example": "string",
+        "bodyBase64": null,
+        "exampleSource": "synthesized",
+        "authoredExampleSource": "none",
+        "hasAuthoredExample": false
+      }
+    ],
+    "defaultResponseIndex": 0,
+    "streamSelector": null,
+    "errorResponses": {
+      "400": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": "string",
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ]
+    }
+  },
+  {
+    "operationId": "RenameTagParams",
+    "summary": "Renames an existing tag using its current URL-encoded name. Send the new tag name in `Name`; the request body is optional, but the body schema requires `Name` when you provide a body.",
+    "method": "PUT",
+    "pathTemplate": "/api/v1/tags/{Tag}",
+    "regexSource": "^/api/v1/tags/(?<sdkPath0>[^/]+)$",
+    "pathParams": ["Tag"],
+    "pathParameters": [
+      {
+        "wireName": "Tag",
+        "required": true,
+        "style": "simple",
+        "explode": false,
+        "allowReserved": false,
+        "isArray": false,
+        "jsonContent": false,
+        "shape": "scalar",
+        "members": [],
+        "example": "Tag",
+        "routeRepresentative": "sdk-route-1"
+      }
+    ],
+    "queryParameters": [],
+    "literalQuery": [],
+    "headerParameters": [],
+    "cookieParameters": [],
+    "specificity": {
+      "staticSegments": 3,
+      "parameterSegments": 1,
+      "totalSegments": 4,
+      "staticCharacterCount": 9,
+      "constrainedParameters": 0,
+      "literalQueryParameters": 0
+    },
+    "originalIndex": 20,
+    "requestModes": [
+      {
+        "mediaType": "application/json",
+        "encoderKind": "json",
+        "required": false,
+        "bodyShape": "fields",
+        "requiredFields": ["Name"],
+        "fields": [
+          {
+            "wireName": "Name",
+            "repeated": false,
+            "partKind": "scalar",
+            "contentType": null
+          }
+        ],
+        "example": {
+          "Name": "New name"
+        }
+      }
+    ],
+    "responseModes": [
+      {
+        "statusCode": "200",
+        "mediaType": "text/plain",
+        "decoderKind": "text",
+        "example": "string",
+        "bodyBase64": null,
+        "exampleSource": "synthesized",
+        "authoredExampleSource": "none",
+        "hasAuthoredExample": false
+      }
+    ],
+    "defaultResponseIndex": 0,
+    "streamSelector": null,
+    "errorResponses": {
+      "400": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": "string",
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ]
+    }
+  },
+  {
+    "operationId": "GetMessageHTMLParams",
+    "summary": "Renders just the message's HTML part which can be used for UI integration testing.\nAttached inline images are modified to link to the API provided they exist.\nNote that is the message does not contain a HTML part then an 404 error is returned.\n\nThe ID can be set to `latest` to return the latest message.",
+    "method": "GET",
+    "pathTemplate": "/view/{ID}.html",
+    "regexSource": "^/view/(?<sdkPath0>[^/]+)\\.html$",
+    "pathParams": ["ID"],
+    "pathParameters": [
+      {
+        "wireName": "ID",
+        "required": true,
+        "style": "simple",
+        "explode": false,
+        "allowReserved": false,
+        "isArray": false,
+        "jsonContent": false,
+        "shape": "scalar",
+        "members": [],
+        "example": "id-1",
+        "routeRepresentative": "sdk-route-1"
+      }
+    ],
+    "queryParameters": [
+      {
+        "wireName": "embed",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "allowReserved": false,
+        "isArray": false,
+        "jsonContent": false,
+        "shape": "scalar",
+        "members": [],
+        "example": "embed"
+      }
+    ],
+    "literalQuery": [],
+    "headerParameters": [],
+    "cookieParameters": [],
+    "specificity": {
+      "staticSegments": 1,
+      "parameterSegments": 1,
+      "totalSegments": 2,
+      "staticCharacterCount": 9,
+      "constrainedParameters": 0,
+      "literalQueryParameters": 0
+    },
+    "originalIndex": 23,
+    "requestModes": [],
+    "responseModes": [
+      {
+        "statusCode": "200",
+        "mediaType": "text/html",
+        "decoderKind": "text",
+        "example": "string",
+        "bodyBase64": null,
+        "exampleSource": "synthesized",
+        "authoredExampleSource": "none",
+        "hasAuthoredExample": false
+      }
+    ],
+    "defaultResponseIndex": 0,
+    "streamSelector": null,
+    "errorResponses": {
+      "400": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": "string",
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ],
+      "404": [
+        {
+          "statusCode": "404",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": "string",
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ]
+    }
+  },
+  {
+    "operationId": "GetMessageTextParams",
+    "summary": "Renders just the message's text part which can be used for UI integration testing.\n\nThe ID can be set to `latest` to return the latest message.",
+    "method": "GET",
+    "pathTemplate": "/view/{ID}.txt",
+    "regexSource": "^/view/(?<sdkPath0>[^/]+)\\.txt$",
+    "pathParams": ["ID"],
+    "pathParameters": [
+      {
+        "wireName": "ID",
+        "required": true,
+        "style": "simple",
+        "explode": false,
+        "allowReserved": false,
+        "isArray": false,
+        "jsonContent": false,
+        "shape": "scalar",
+        "members": [],
+        "example": "id-1",
+        "routeRepresentative": "sdk-route-1"
+      }
+    ],
+    "queryParameters": [],
+    "literalQuery": [],
+    "headerParameters": [],
+    "cookieParameters": [],
+    "specificity": {
+      "staticSegments": 1,
+      "parameterSegments": 1,
+      "totalSegments": 2,
+      "staticCharacterCount": 8,
+      "constrainedParameters": 0,
+      "literalQueryParameters": 0
+    },
+    "originalIndex": 24,
+    "requestModes": [],
+    "responseModes": [
+      {
+        "statusCode": "200",
+        "mediaType": "text/plain",
+        "decoderKind": "text",
+        "example": "string",
+        "bodyBase64": null,
+        "exampleSource": "synthesized",
+        "authoredExampleSource": "none",
+        "hasAuthoredExample": false
+      }
+    ],
+    "defaultResponseIndex": 0,
+    "streamSelector": null,
+    "errorResponses": {
+      "400": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": "string",
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ],
+      "404": [
+        {
+          "statusCode": "404",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": "string",
+          "bodyBase64": null,
+          "exampleSource": "synthesized",
+          "authoredExampleSource": "none",
+          "hasAuthoredExample": false
+        }
+      ]
+    }
+  }
+]
